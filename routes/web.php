@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::name('admin.')
+    ->middleware('admin')
+    ->prefix('admin')
+    ->group(function () {
+        Route::resources([
+            'blogs' => 'AdminPart\BlogController',
+            'blog-categories' => 'AdminPart\BlogCategoryController',
+            'blog-tags' => 'AdminPart\BlogTagController',
+        ]);
+    });
