@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes([
+    'register' => false,
+    'reset' => false,
+    'confirm' => false,
+]);
+
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::redirect('admin', 'admin/blogs');
+
 Route::name('admin.')
-    ->middleware('admin')
+//    ->middleware('auth')
     ->prefix('admin')
     ->group(function () {
         Route::resources([
@@ -26,3 +36,6 @@ Route::name('admin.')
             'blog-tags' => 'AdminPart\BlogTagController',
         ]);
     });
+
+
+Route::get('/home', 'HomeController@index')->name('home');
