@@ -84,7 +84,7 @@ class BlogController extends Controller
     {
         $blog->update($request->all());
 
-        return redirect()->route('admin.blog.index', compact('blog'));
+        return redirect()->route('admin.blogs.index', compact('blog'));
     }
 
     /**

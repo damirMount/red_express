@@ -1,6 +1,9 @@
-@extends('admin.layouts.dashboard')
+@extends('admin.layouts.app')
 
-@section('dashboard_content')
+@section('content')
 
-<p>dwadwadwa</p>
+
+    <h1>    gello world</h1>
+
+
 @endsection
