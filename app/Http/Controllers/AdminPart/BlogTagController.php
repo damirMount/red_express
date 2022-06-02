@@ -13,74 +13,71 @@ class BlogTagController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.blog-tags.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $blogCategory = BlogTag::create($request->all());
+
+        return redirect()->route('admin.blog-categories.index', $blogCategory);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\BlogTag  $blogTag
+     * @param  \App\BlogTag $blogCategory
      * @return \Illuminate\Http\Response
      */
-    public function show(BlogTag $blogTag)
+    public function show(BlogTag $blogCategory)
     {
-        //
+        return view('admin.blog-tags.create', $blogCategory);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\BlogTag  $blogTag
+     * @param  \App\BlogTag $blogCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(BlogTag $blogTag)
+    public function edit(BlogTag $blogCategory)
     {
-        //
+        return view('admin.blog-tags.edit', $blogCategory);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\BlogTag  $blogTag
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\BlogTag $blogCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BlogTag $blogTag)
+    public function update(Request $request, BlogTag $blogCategory)
     {
-        //
+        $blogCategory->update($request->all());
+
+        return redirect()->route('admin.blog-categories.index', $blogCategory);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\BlogTag  $blogTag
+     * @param  \App\BlogTag $blogCategory
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
-    public function destroy(BlogTag $blogTag)
+    public function destroy(BlogTag $blogCategory)
     {
-        //
+        $blogCategory->delete();
+
+        return redirect()->route('admin.blog-categories.index', $blogCategory);
     }
 }
