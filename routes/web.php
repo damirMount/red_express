@@ -38,6 +38,8 @@ Route::name('admin.')
             'blogs' => 'AdminPart\BlogController',
             'blog-categories' => 'AdminPart\BlogCategoryController',
             'blog-tags' => 'AdminPart\BlogTagController',
+            'offers' => 'AdminPart\OfferController',
+            'questions' => 'AdminPart\QuestionController'
         ]);
     });
 
