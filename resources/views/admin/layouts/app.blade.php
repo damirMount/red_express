@@ -11,9 +11,9 @@
     {{--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">--}}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    {{--<link rel="stylesheet" href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">--}}
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    {{--<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">--}}
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     @stack('styles')
     <style>
@@ -225,10 +225,6 @@
                        class="{{ request()->is('admin/blog*') ? 'active' : '' }}">Новости</a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.blog-categories.index') }}"
-                       class="{{ request()->is('admin/blog-categorie*') ? 'active' : '' }}">Категории новостей</a>
-                </li>
-                <li>
                     <a href="{{ route('admin.offers.index') }}"
                        class="{{ request()->is('admin/offer*') ? 'active' : '' }}">Тарифы</a>
                 </li>
@@ -288,10 +284,10 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+{{--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"--}}
+        {{--integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"--}}
+        {{--crossorigin="anonymous"></script>--}}
+{{--<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>--}}
 <script>
     $("#menu-toggle").click(function (e) {
         e.preventDefault();
@@ -318,7 +314,7 @@
             header.classList.remove("sticky");
         }
     }
-@stack('scripts')
 </script>
+@stack('scripts')
 </body>
 </html>

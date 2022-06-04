@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\AdminPart;
 
 use App\Blog;
-use App\BlogCategory;
-use App\BlogTag;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
@@ -22,10 +20,10 @@ class BlogController extends Controller
     {
         if ($request->ajax()) {
             return DataTables::of(Blog::query())
-                ->addColumn('actions', function (Blog $blog) {
-                    return view('admin.actions', ['type' => 'blogs', 'model' => $blog]);
-
-                })
+//                ->addColumn('actions', function (Blog $blog) {
+//                    return view('admin.actions', ['type' => 'blogs', 'model' => $blog]);
+//
+//                })
                 ->make(true);
         }
 
@@ -39,10 +37,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        $categories = BlogCategory::all();
-        $tags = BlogTag::all();
-
-        return view('admin.blogs.create', compact('categories', 'tags'));
+        return view('admin.blogs.create');
     }
 
     /**
@@ -66,7 +61,7 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        return view('admin.blogs.show', compact($blog));
+        return view('admin.blogs.show', compact('blog'));
     }
 
     /**
@@ -77,10 +72,7 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        $categories = BlogCategory::all();
-        $tags = BlogTag::all();
-
-        return view('admin.blogs.edit', compact('categories', 'tags', 'blog'));
+        return view('admin.blogs.edit', compact('blog'));
     }
 
     /**

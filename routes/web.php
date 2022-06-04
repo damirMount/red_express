@@ -36,8 +36,6 @@ Route::name('admin.')
     ->group(function () {
         Route::resources([
             'blogs' => 'AdminPart\BlogController',
-            'blog-categories' => 'AdminPart\BlogCategoryController',
-            'blog-tags' => 'AdminPart\BlogTagController',
             'offers' => 'AdminPart\OfferController',
             'questions' => 'AdminPart\QuestionController'
         ]);
