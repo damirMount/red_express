@@ -7,9 +7,12 @@
     <title>{{ config('app.name', 'Админка') }}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<!-- CSS only -->
+    {{--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">--}}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     @stack('styles')
 </head>
 <body style="background: #eeeeee">
@@ -46,7 +49,23 @@
             </div>
         </nav>
     </header>
-    @yield('content')
+        <div class="sidebar-fixed position-fixed">
+            <div class="list-group list-group-flush">
+                <a href="{{ route('home') }}" class="logo-wrapper waves-effect mb-3"
+                   style="text-align: center;padding-top: 10px;">
+                    <img src="{{ asset('image/admin_logo.svg') }}" class="img-fluid" alt="logo">
+                </a>
+                <a href="{{ route('admin.blogs.index') }}"
+                   class="list-group-item list-group-item-action waves-effect {{ request()->is('admin/blog*') ? 'active' : '' }}">
+                    <i class="fas fa-building mr-3"></i>{{ __('Блоги') }}
+                </a>
+            </div>
+    </div>
+    <div class="mt-2">
+        <div class="container-fluid mt-5">
+            @yield('content')
+        </div>
+    </div>
 </div>
 <script src="https://api-maps.yandex.ru/2.1/?apikey=a2435f91-837f-4a88-87c0-7ac7813eb317&lang=ru_RU"
         type="text/javascript"></script>

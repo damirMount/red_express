@@ -7,19 +7,29 @@ use App\BlogCategory;
 use App\BlogTag;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
-    public function index()
+    public function index(Request $request)
     {
-        $blogs = Blog::latest()->paginate(10);
+        if ($request->ajax()) {
+            return DataTables::of(Blog::query())
+                ->addColumn('actions', function (Blog $blog) {
+                    return view('admin.actions', ['type' => 'blogs', 'model' => $blog]);
 
-        return view('admin.blogs.index', compact('blogs'));
+                })
+                ->make(true);
+        }
+
+        return view('admin.blogs.index');
     }
 
     /**
