@@ -1,0 +1,38 @@
+header {
+    font-family: 'Inter', sans-serif;
+}
+
+.logo {
+    margin-right: 18.75vw;
+}
+.red-express__header {
+    margin-top: 45px;
+}
+.red-express__links .nav-item {
+    margin-right: 3.2638vw !important;
+}
+.red-express__links .nav-item:last-child {
+    margin-right: 0 !important;
+}
+
+.red-express__links .nav-item .nav-link {
+    padding: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+
+.btn-green {
+    padding: 15px 45px !important;
+    background: #44B069;
+    border-radius: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF !important;
+}

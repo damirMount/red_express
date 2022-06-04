@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <h1>    Mello world</h1>
+    <h1>Offers</h1>
 
 
 @endsection

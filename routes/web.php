@@ -26,6 +26,10 @@ Auth::routes([
 
 Route::redirect('admin', 'admin/blogs');
 
+Route::get('/', function () {
+    return view('pages.home.index');
+});
+
 Route::name('admin.')
 //    ->middleware('auth')
     ->prefix('admin')
@@ -34,6 +38,8 @@ Route::name('admin.')
             'blogs' => 'AdminPart\BlogController',
             'blog-categories' => 'AdminPart\BlogCategoryController',
             'blog-tags' => 'AdminPart\BlogTagController',
+            'offers' => 'AdminPart\OfferController',
+            'questions' => 'AdminPart\QuestionController'
         ]);
     });
 
