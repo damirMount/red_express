@@ -1,6 +1,9 @@
 @extends('admin.layouts.app')
 
 @section('content')
+    <div class="col-auto">
+        <a href="{{ route('admin.blogs.create') }}" class="btn btn-success">{{ __('Создать') }}</a>
+    </div>
     <div class="m-2 rounded">
         <table class="table table-striped table-bordered rounded" id="blogs-table">
             <thead>
@@ -54,8 +57,9 @@
                         searchable: false,
                     },
                     {data: 'title'},
-                    {data: 'content'},
+                    {data: 'desc'},
                     {data: 'banner'},
+                    // {data: 'actions'},
                 ],
                 "language": {
                     "url": "//cdn.datatables.net/plug-ins/1.10.18/i18n/Russian.json"

@@ -1,107 +1,64 @@
 @extends('admin.layouts.app')
+
 @section('content')
-    <form action="{{ route('admin.users.update', $user) }}" method="POST"
-          enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
+    <div class="p-3 bg-form card-body-admin">
         <div class="row">
-            <div class="col-12 d-flex justify-content-center">
-                <h5 class="text-center font-weight-bold">Редактирование пользователя</h5>
-            </div>
-            <div class="col-lg-6 col-12">
-                <div class="form-group">
-                    <label for="first-name">Имя:</label>
-                    <input type="text" id="first-name" class="form-control" name="name"
-                           value="{{ old('name', $user->first_name) }}"
-                           readonly>
-                </div>
-            </div>
-            <div class="col-lg-6 col-12">
-                <div class="form-group">
-                    <label for="last-name">Фамилия:</label>
-                    <input type="text" id="last-name" class="form-control" name="email"
-                           value="{{ old('email', $user->last_name) }}"
-                           readonly>
-                </div>
-            </div>
-            <div class="col-lg-6 col-12">
-                <div class="form-group">
-                    <label for="region-select">Регион:</label>
-                    <select class="form-control" name="region_id" id="region-select">
-                        @foreach($regions as $region)
-                            <option value="{{ $region->id }}"{{ $user->region_id==$region->id?'selected':'' }}>{{ $region->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
-            <div class="col-lg-6 col-12">
-                <div class="form-group">
-                    <label for="surveys_select">Опросы:</label>
-                    <select id="surveys_select" name="surveys[]" class="form-control" multiple>
-                        @foreach($surveys as $survey)
-                            <option value="{{ $survey->id }}" {{  $user->surveys->find($survey->id) ? 'selected' : '' }}>{{ $survey->translations->first()->text  }}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
-            <div class="col-12 mt-2">
-                <button type="submit" class="btn btn-success">{{ __('Изменить') }}</button>
-                <button id="delete_button" type="button" class="btn btn-danger">{{ __('Удалить') }}</button>
-            </div>
-        </div>
-    </form>
-    <form id="delete-form" method="POST"
-          action="{{ route('admin.users.destroy', $user) }}">
-        @csrf
-        @method('DELETE')
-    </form>
-    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
-         id="confirm-modal">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Удаление</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    Вы дествительно хотите удалить пользователя?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" id="modal-btn-yes">Да</button>
-                    <button type="button" class="btn btn-primary" id="modal-btn-no">Нет</button>
-                </div>
+            <div class="col-12 col-sm-10 col-lg-12 col-md-10 pb-5 px-5">
+                <form action="{{ route('admin.blogs.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="row justify-content-center">
+                        <p class="font-weight-bold h2">Добавление новости</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="title_input">Заголовок:<span class="text-danger">*</span></label>
+                        <input id="title_input" type="text" class="form-control" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="desc_textarea">Описание:<span class="text-danger">*</span></label>
+                        <textarea id="desc_textarea" class="form-control" name="desc"
+                                  required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="banner_input">Баннер:<span class="text-danger">*</span></label>
+                        <input id="banner_input" type="file" class="form-control" name="image" accept="image/*"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <label for="content_textarea">Контент:<span class="text-danger">*</span></label>
+                        <textarea id="content_textarea" type="text" class="form-control tinymce-editor"
+                                  name="content"></textarea>
+                    </div>
+                    <button type="submit" title="{{ __('Добавить') }}"
+                            class="btn n btn-success">{{ __('Добавить') }}</button>
+
+                </form>
             </div>
         </div>
     </div>
 @endsection
-@push('styles')
 
-@endpush
 @push('scripts')
+    <script src="https://cdn.tiny.cloud/1/v3r71nl7rlj94mvjubwapzf91fnk5xaia0oxkl1jq66xux3i/tinymce/5/tinymce.min.js"
+            referrerpolicy="origin"></script>
     <script>
-        $(document).ready(function () {
-            $('#surveys_select').select2();
-        });
-    </script>
-    <script>
-        const modalConfirm = function (callback) {
-            $("#delete_button").on("click", function () {
-                $("#confirm-modal").modal('show');
-            });
-            $("#modal-btn-yes").on("click", function () {
-                callback(true);
-                $("#confirm-modal").modal('hide');
-            });
-            $("#modal-btn-no").on("click", function () {
-                callback(false);
-                $("#confirm-modal").modal('hide');
-            });
-        };
-        modalConfirm(function (confirm) {
-            if (confirm) {
-                $('#delete-form').submit();
-            }
+        tinymce.init({
+            selector: 'textarea.tinymce-editor',
+            height: 500,
+            menubar: true,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+            'bold italic backcolor | alignleft aligncenter ' +
+            'alignright alignjustify | bullist numlist outdent indent | ' +
+            'removeformat | help | uploadimage',
+            paste_data_images: true,
+            images_upload_handler: function (blobInfo, success, failure) {
+                success("data:" + blobInfo.blob().type + ";base64," + blobInfo.base64());
+            },
+            // content_css: '//www.tiny.cloud/css/codepen.min.css',
         });
     </script>
 @endpush

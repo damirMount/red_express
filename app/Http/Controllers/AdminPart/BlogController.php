@@ -4,6 +4,7 @@ namespace App\Http\Controllers\AdminPart;
 
 use App\Blog;
 use App\Http\Controllers\Controller;
+use App\Service\ImageUploader;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -20,10 +21,11 @@ class BlogController extends Controller
     {
         if ($request->ajax()) {
             return DataTables::of(Blog::query())
-//                ->addColumn('actions', function (Blog $blog) {
-//                    return view('admin.actions', ['type' => 'blogs', 'model' => $blog]);
-//
-//                })
+                ->editColumn('banner', function (Blog $blog) {
+                    return '<img src="' . asset('storage/' . $blog->banner) . '" width="200">';
+
+                })
+                ->rawColumns(['banner'])
                 ->make(true);
         }
 
@@ -48,8 +50,9 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        $blog = Blog::create($request->all());
-
+        $blog = Blog::create($request->except('image'));
+        $blog->banner = ImageUploader::upload($request->file('image'), 'blogs', 'blog');
+        $blog->save();
         return redirect()->route('admin.blogs.index', compact('blog'));
     }
 
@@ -84,8 +87,7 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-        $blog->update($request->all());
-
+//        $blog->update($request->ex);
         return redirect()->route('admin.blogs.index', compact('blog'));
     }
 

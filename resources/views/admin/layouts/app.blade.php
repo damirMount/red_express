@@ -5,15 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Админка') }}</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <!-- CSS only -->
-    {{--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">--}}
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    {{--<link rel="stylesheet" href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">--}}
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet"/>
-    {{--<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">--}}
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     @stack('styles')
     <style>
@@ -23,21 +18,6 @@
             -moz-transition: all 0.5s ease;
             -o-transition: all 0.5s ease;
             transition: all 0.5s ease;
-        }
-
-        #loader {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 99999;
-            background: url("{{ asset('img/Pulse-1s-200px (1).gif') }}") no-repeat center;
-        }
-
-        #wrapper.toggled {
-            padding-left: 200px;
         }
 
         #sidebar-wrapper {
@@ -232,47 +212,6 @@
                     <a href="{{ route('admin.questions.index') }}"
                        class="{{ request()->is('admin/question*') ? 'active' : '' }}">FAQ</a>
                 </li>
-{{--                <li>--}}
-{{--                    <a href="{{ route('admin.surveys.index') }}"--}}
-{{--                       class="{{ request()->is('admin/survey*') ? 'active' : '' }}">Опросники</a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="{{ route('admin.sections.index') }}"--}}
-{{--                       class="{{ request()->is('admin/section*') ? 'active' : '' }}">Секции</a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="{{ route('admin.maps.index') }}"--}}
-{{--                       class="{{ request()->is('admin/map*') ? 'active' : '' }}">Карта</a>--}}
-{{--                </li>--}}
-{{--                <li class="mt-auto">--}}
-{{--                    <a href="{{ asset('/files/bio-03.07-app-release.apk') }}"--}}
-{{--                       class="">Скачать сборку</a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href=""--}}
-{{--                    >Инициативы</a>--}}
-{{--                    <ul class="submenu">--}}
-{{--                        <li><a href="{{ route('admin.initiatives.index') }}"--}}
-{{--                               class="{{ request()->is('admin/initiative*') ? 'active' : '' }}">Активные</a></li>--}}
-{{--                        <li><a href="{{ route('admin.initiatives.new') }}"--}}
-{{--                               class="{{ request()->is('admin/new/initiative*') ? 'active' : '' }}">Новые</a></li>--}}
-{{--                        <li><a href="{{ route('admin.initiatives.mod') }}"--}}
-{{--                               class="{{ request()->is('admin/mod/initiative*') ? 'active' : '' }}">На модерацию</a>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="{{ route('admin.countries.index') }}"--}}
-{{--                       class="{{ request()->is('admin/countrie*') ? 'active' : '' }}">Страны</a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="{{ route('admin.statuses.index') }}"--}}
-{{--                       class="{{ request()->is('admin/status*') ? 'active' : '' }}">Статусы</a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="{{ route('admin.products.index') }}"--}}
-{{--                       class="{{ request()->is('admin/product*') ? 'active' : '' }}">Продукты</a>--}}
-{{--                </li>--}}
             </ul>
         </div>
     </div>
@@ -284,10 +223,9 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous"></script>
-{{--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"--}}
-        {{--integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"--}}
-        {{--crossorigin="anonymous"></script>--}}
-{{--<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>--}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" type="text/javascript"></script>
+
 <script>
     $("#menu-toggle").click(function (e) {
         e.preventDefault();
