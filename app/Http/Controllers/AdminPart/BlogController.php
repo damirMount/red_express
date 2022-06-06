@@ -6,6 +6,7 @@ use App\Blog;
 use App\Http\Controllers\Controller;
 use App\Service\ImageUploader;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 
 class BlogController extends Controller
@@ -87,7 +88,12 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-//        $blog->update($request->ex);
+        $blog->update($request->all());
+        if ($request->file('image')) {
+            Storage::delete('public/' . $blog->banner);
+            $blog->banner = ImageUploader::upload($request->file('image'), 'blogs', 'blog');
+            $blog->save();
+        }
         return redirect()->route('admin.blogs.index', compact('blog'));
     }
 
@@ -100,6 +106,7 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
+        Storage::delete('public/' . $blog->banner);
         $blog->delete();
 
         return redirect()->route('admin.blogs.index', compact('blog'));

@@ -29,7 +29,7 @@
                                   name="content"></textarea>
                     </div>
                     <button type="submit" title="{{ __('Добавить') }}"
-                            class="btn n btn-success">{{ __('Добавить') }}</button>
+                            class="btn btn-success">{{ __('Добавить') }}</button>
 
                 </form>
             </div>
