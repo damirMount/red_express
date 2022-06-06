@@ -31,7 +31,7 @@ Route::get('/', function () {
 });
 
 Route::name('admin.')
-//    ->middleware('auth')
+    ->middleware('auth')
     ->prefix('admin')
     ->group(function () {
         Route::resources([
