@@ -18,8 +18,8 @@
         <link href="{{ asset('css/index.css') }}" rel="stylesheet">
         <link href="{{ asset('css/header.css') }}" rel="stylesheet">
 
-
         @yield('styles')
+
     </head>
     <body>
         <header>

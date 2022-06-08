@@ -22,8 +22,17 @@
                 <img src="/img/home/small-pink-line-right.png" class="pink-right" alt="">
             </div>
             <div class="container">
-                @include('pages.home.about_compony')
             </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            @include('pages.home.about_compony')
+
+            @include('pages.home.price')
+
+            @include('pages.home.representative_map')
         </div>
     </section>
 

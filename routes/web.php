@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.home.index');
 });
+Route::get('/news', function() {
+    return view('pages.news.blogs_news');
+});
 Route::name('admin.')
     ->middleware('admin')
     ->prefix('admin')
