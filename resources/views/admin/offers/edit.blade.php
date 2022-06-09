@@ -4,7 +4,7 @@
     <div class="p-3 bg-form card-body-admin">
         <div class="row p-3">
             <div class="col-12 col-sm-12 col-lg-12 col-md-10">
-                <form action="{{ route('admin.questions.update', $offer) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.offers.update', $offer) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="row justify-content-center">

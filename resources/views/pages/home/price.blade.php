@@ -16,26 +16,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                @foreach($offers as $offer)
                     <tr>
-                        <td>Москва</td>
-                        <td>35 руб</td>
-                        <td>6700 руб</td>
+                        <td>{{ $offer->country }}</td>
+                        <td>{{ $offer->kg_field }}</td>
+                        <td>{{ $offer->cbm_field }}</td>
                     </tr>
-                    <tr>
-                        <td>Казань</td>
-                        <td>35 руб</td>
-                        <td>6700 руб</td>
-                    </tr>
-                    <tr>
-                        <td>Самара</td>
-                        <td>40 руб</td>
-                        <td>7600 руб</td>
-                    </tr>
-                    <tr>
-                        <td>Уфа</td>
-                        <td>45 руб</td>
-                        <td>8600 руб</td>
-                    </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>

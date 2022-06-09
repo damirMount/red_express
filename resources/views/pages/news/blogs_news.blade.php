@@ -1,10 +1,3 @@
-@php
-    $arrImg = [
-        'img/blog/card/person-1.png','img/blog/card/person-2.png','img/blog/card/person-3.png',
-        'img/blog/card/person-1.png','img/blog/card/person-2.png','img/blog/card/person-3.png',
-        'img/blog/card/person-1.png','img/blog/card/person-2.png','img/blog/card/person-3.png'
-    ]
-@endphp
 @extends('layouts.app')
 
 @section('styles')
@@ -15,13 +8,11 @@
     <div class="container">
         <h1>Новости</h1>
         <div class="row">
-
-
-            @for ($i = 0; $i < 9; $i++)
+            @foreach ($blogs as $blog)
                 <div class="col-12 col-lg-4">
-                    @include('components.news.card', ['img'=>$arrImg[$i]])
+                    @include('components.news.card', compact('blog'))
                 </div>
-            @endfor
+            @endforeach
 
         </div>
 
