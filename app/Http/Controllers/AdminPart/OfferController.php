@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminPart;
 use App\Http\Controllers\Controller;
 use App\Offer;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class OfferController extends Controller
 {
@@ -13,8 +14,13 @@ class OfferController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax()) {
+            return DataTables::of(Offer::query())
+                ->make(true);
+        }
+
         return view('admin.offers.index');
     }
 
@@ -25,7 +31,7 @@ class OfferController extends Controller
      */
     public function create()
     {
-        return view('admin.view.create');
+        return view('admin.offers.create');
     }
 
     /**
@@ -74,7 +80,7 @@ class OfferController extends Controller
     {
         $offer->update($request->all());
 
-        return redirect()->route('admin.question.index', compact('offer'));
+        return redirect()->route('admin.offers.index', compact('offer'));
     }
 
     /**

@@ -277,3 +277,15 @@ a.waves-effect, a.waves-light {
     border: 1px solid #0069d9 !important;
     background-color: #0069d9 !important;
 }
+.font-size-12 {
+    font-size: 12px;
+}
+.font-size-14 {
+    font-size: 14px;
+}
+.font-size-16 {
+    font-size: 16px;
+}
+.font-size-18 {
+    font-size: 18px;
+}
