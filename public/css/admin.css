@@ -288,4 +288,6 @@ a.waves-effect, a.waves-light {
 }
 .font-size-18 {
     font-size: 18px;
+ button.btn.btn-danger{
+    cursor: pointer;
 }

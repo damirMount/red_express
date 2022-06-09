@@ -13,7 +13,7 @@
                         @method('DELETE')
                         <button type="button" onclick="deleteConfirm(this)" data-id="{{ $blog->id }}"
                                 title="{{ __('Удалить') }}"
-                                class="btn n btn-danger">
+                                class="btn btn-danger">
                             <i class="fas fa-trash"></i>
                         </button>
                     </form>
@@ -21,8 +21,18 @@
                 </div>
                 <div class="col-12 mt-2">
                     <div class="card">
-                        <div class="card-header h4">
-                            {{ $blog->title }}
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="col-7">
+                                <h4>
+                                    {{ $blog->title }}
+                                </h4>
+                                <p>
+                                    {{ $blog->desc }}
+                                </p>
+                            </div>
+                            <div class="col-5">
+                                <img class="mt-2" src=" {{ asset('storage/' . $blog->banner)}}" width="100%">
+                            </div>
                         </div>
                         <div class="card-body">
                             <div>
@@ -38,7 +48,7 @@
 
 @push('styles')
     <style>
-        .card-body img{
+        .card-body img {
             max-width: 100%;
             height: auto;
         }
@@ -55,3 +65,4 @@
         }
     </script>
 @endpush
+
