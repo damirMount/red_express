@@ -3,23 +3,34 @@
 namespace App\Http\Controllers\AdminPart;
 
 use App\Blog;
-use App\BlogCategory;
-use App\BlogTag;
 use App\Http\Controllers\Controller;
+use App\Service\ImageUploader;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Yajra\DataTables\Facades\DataTables;
 
 class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
-    public function index()
+    public function index(Request $request)
     {
-        $blogs = Blog::latest()->paginate(10);
+        if ($request->ajax()) {
+            return DataTables::of(Blog::query())
+                ->editColumn('banner', function (Blog $blog) {
+                    return '<img src="' . asset('storage/' . $blog->banner) . '" width="200">';
 
-        return view('admin.blogs.index', compact('blogs'));
+                })
+                ->rawColumns(['banner'])
+                ->make(true);
+        }
+
+        return view('admin.blogs.index');
     }
 
     /**
@@ -29,10 +40,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        $categories = BlogCategory::all();
-        $tags = BlogTag::all();
-
-        return view('admin.blogs.create', compact('categories', 'tags'));
+        return view('admin.blogs.create');
     }
 
     /**
@@ -43,8 +51,9 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        $blog = Blog::create($request->all());
-
+        $blog = Blog::create($request->except('image'));
+        $blog->banner = ImageUploader::upload($request->file('image'), 'blogs', 'blog');
+        $blog->save();
         return redirect()->route('admin.blogs.index', compact('blog'));
     }
 
@@ -56,7 +65,7 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        return view('admin.blogs.show', compact($blog));
+        return view('admin.blogs.show', compact('blog'));
     }
 
     /**
@@ -67,10 +76,7 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        $categories = BlogCategory::all();
-        $tags = BlogTag::all();
-
-        return view('admin.blogs.edit', compact('categories', 'tags', 'blog'));
+        return view('admin.blogs.edit', compact('blog'));
     }
 
     /**
@@ -83,8 +89,12 @@ class BlogController extends Controller
     public function update(Request $request, Blog $blog)
     {
         $blog->update($request->all());
-
-        return redirect()->route('admin.blog.index', compact('blog'));
+        if ($request->file('image')) {
+            Storage::delete('public/' . $blog->banner);
+            $blog->banner = ImageUploader::upload($request->file('image'), 'blogs', 'blog');
+            $blog->save();
+        }
+        return redirect()->route('admin.blogs.index', compact('blog'));
     }
 
     /**
@@ -96,6 +106,7 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
+        Storage::delete('public/' . $blog->banner);
         $blog->delete();
 
         return redirect()->route('admin.blogs.index', compact('blog'));
