@@ -34,12 +34,10 @@ Route::get('/news', function() {
     return view('pages.news.blogs_news');
 });
 
-Route::get('/news/view/blog', function() {
-    return view('pages.news.view_news');
-});
+Route::get('/news/{blog}', 'BlogController@show')->name('new.show');
 
 Route::name('admin.')
-    ->middleware('auth')
+//    ->middleware('auth')
     ->prefix('admin')
     ->group(function () {
         Route::resources([

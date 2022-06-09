@@ -11,7 +11,7 @@
                         <p class="font-weight-bold h2">Редактирование объекта</p>
                     </div>
                     <div class="form-group">
-                        <label for="name_field">Страна:<span class="text-danger">*</span></label>
+                        <label for="name_field">Город:<span class="text-danger">*</span></label>
                         <input id="name_field" type="text" class="form-control" name="country" value="{{ $offer->country }}" required>
                     </div>
                     <div class="form-group">
