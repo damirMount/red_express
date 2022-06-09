@@ -16,9 +16,13 @@
         <h1>Новости</h1>
         <div class="row">
 
+
             @for ($i = 0; $i < 9; $i++)
-                @include('components.news.card', ['img'=>$arrImg[$i]])
+                <div class="col-12 col-lg-4">
+                    @include('components.news.card', ['img'=>$arrImg[$i]])
+                </div>
             @endfor
+
         </div>
 
         <div class="row">

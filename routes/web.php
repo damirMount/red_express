@@ -19,6 +19,10 @@ Route::get('/', function () {
 Route::get('/news', function() {
     return view('pages.news.blogs_news');
 });
+Route::get('/news/view/blog', function() {
+    return view('pages.news.view_news');
+});
+
 Route::name('admin.')
     ->middleware('admin')
     ->prefix('admin')
