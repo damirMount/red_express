@@ -30,9 +30,7 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/news', 'BlogController@listBlog')->name('list.blog');
 
-Route::get('/news/view/blog', function() {
-    return view('pages.news.view_news');
-});
+Route::get('/news/{blog}', 'BlogController@show')->name('new.show');
 
 Route::name('admin.')
 //    ->middleware()

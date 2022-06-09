@@ -12,4 +12,9 @@ class BlogController extends Controller
         $blogs = Blog::paginate(3);
         return view('pages.news.blogs_news', compact('blogs'));
     }
+
+    public function show(Request $request, Blog $blog)
+    {
+        return view('pages.news.view_news', compact('blog'));
+    }
 }

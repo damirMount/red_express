@@ -10,7 +10,7 @@
                         <p class="font-weight-bold h2">Добавление тарифа</p>
                     </div>
                     <div class="form-group">
-                        <label for="title_input">Страна:<span class="text-danger">*</span></label>
+                        <label for="title_input">Город:<span class="text-danger">*</span></label>
                         <input id="title_input" type="text" class="form-control" name="country" required>
                     </div>
                     <div class="form-group">
