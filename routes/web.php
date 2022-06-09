@@ -41,5 +41,4 @@ Route::name('admin.')
         ]);
     });
 
-
 Route::get('/home', 'HomeController@index')->name('home');

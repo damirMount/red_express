@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminPart;
 use App\Http\Controllers\Controller;
 use App\Question;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class QuestionController extends Controller
 {
@@ -13,8 +14,13 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax()) {
+            return DataTables::of(Question::query())
+                ->make(true);
+        }
+
         return view('admin.questions.index');
     }
 
@@ -25,7 +31,7 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        return view('admin.view.create');
+        return view('admin.questions.create');
     }
 
     /**
@@ -74,7 +80,7 @@ class QuestionController extends Controller
     {
         $question->update($request->all());
 
-        return redirect()->route('admin.question.index', compact('question'));
+        return redirect()->route('admin.questions.index', compact('question'));
     }
 
     /**
