@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('content')
-    <div class="col-auto">
+    <div class="col-auto d-flex justify-content-end">
         <a href="{{ route('admin.offers.create') }}" class="btn btn-success">{{ __('Создать') }}</a>
     </div>
     <div class="m-2 rounded">
@@ -9,7 +9,7 @@
             <thead>
                 <tr>
                     <th></th>
-                    <th scope="col">Страна</th>
+                    <th scope="col">Город</th>
                     <th scope="col">За 1 кг</th>
                     <th scope="col">За 1 кубометр</th>
                 </tr>

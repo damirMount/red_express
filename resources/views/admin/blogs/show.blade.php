@@ -4,10 +4,10 @@
     <section>
         <div class="container bg-light first-wrapper">
             <div class="row">
-                <div class="col-12 d-flex">
+                <div class="col-12 d-flex mt-2 justify-content-end">
                     <a class="btn btn-primary ml-1" href="{{ route('admin.blogs.edit', $blog) }}"><i
                             class="fas fa-pen"></i></a>
-                    <form id="form-{{ $blog->id }}" class="pl-3" name="delete-form" method="POST"
+                    <form id="form-{{ $blog->id }}" class="pl-2" name="delete-form" method="POST"
                           action="{{ route('admin.blogs.destroy', $blog) }}">
                         @csrf
                         @method('DELETE')
