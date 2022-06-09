@@ -30,6 +30,14 @@ Route::get('/', function () {
     return view('pages.home.index');
 });
 
+Route::get('/news', function() {
+    return view('pages.news.blogs_news');
+});
+
+Route::get('/news/view/blog', function() {
+    return view('pages.news.view_news');
+});
+
 Route::name('admin.')
     ->middleware('auth')
     ->prefix('admin')
