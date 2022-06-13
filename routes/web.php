@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,23 +14,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes([
+    'register' => false,
+    'reset' => false,
+    'confirm' => false,
+]);
+
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::redirect('admin', 'admin/blogs');
+
 Route::get('/', function () {
     return view('pages.home.index');
 });
+
 Route::get('/news', function() {
     return view('pages.news.blogs_news');
 });
+
 Route::get('/news/view/blog', function() {
     return view('pages.news.view_news');
 });
 
 Route::name('admin.')
-    ->middleware('admin')
+    ->middleware('auth')
     ->prefix('admin')
     ->group(function () {
         Route::resources([
             'blogs' => 'AdminPart\BlogController',
-            'blog-categories' => 'AdminPart\BlogCategoryController',
-            'blog-tags' => 'AdminPart\BlogTagController',
+            'offers' => 'AdminPart\OfferController',
+            'questions' => 'AdminPart\QuestionController'
         ]);
     });
+
+Route::get('/home', 'HomeController@index')->name('home');

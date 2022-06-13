@@ -2,17 +2,16 @@
 
 @section('content')
     <div class="col-auto">
-        <a href="{{ route('admin.blogs.create') }}" class="btn btn-success">{{ __('Создать') }}</a>
+        <a href="{{ route('admin.questions.create') }}" class="btn btn-success">{{ __('Создать') }}</a>
     </div>
     <div class="m-2 rounded">
-        <table class="table table-striped table-bordered rounded" id="blogs-table">
+        <table class="table table-striped table-bordered rounded" id="question-table">
             <thead>
-            <tr>
-                <th></th>
-                <th scope="col">Заголовок</th>
-                <th scope="col">Описание</th>
-                <th scope="col">Баннер</th>
-            </tr>
+                <tr>
+                    <th></th>
+                    <th scope="col">Вопрос</th>
+                    <th scope="col">Ответ</th>
+                </tr>
             </thead>
         </table>
     </div>
@@ -43,10 +42,10 @@
     <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js" defer></script>
     <script>
         $(function () {
-            let table = $('#blogs-table').DataTable({
+            let table = $('#question-table').DataTable({
                 responsive: true,
                 processing: true,
-                ajax: '{!! route('admin.blogs.index') !!}',
+                ajax: '{!! route('admin.questions.index') !!}',
                 columns: [
                     // Responsive control column
                     {
@@ -56,16 +55,15 @@
                         orderable: false,
                         searchable: false,
                     },
-                    {data: 'title'},
-                    {data: 'desc'},
-                    {data: 'banner'},
+                    {data: 'question'},
+                    {data: 'answer'},
                     // {data: 'actions'},
                 ],
                 "language": {
                     "url": "//cdn.datatables.net/plug-ins/1.10.18/i18n/Russian.json"
                 },
             });
-            $('#blogs-table').on('click', 'tbody td.control', function () {
+            $('#question-table').on('click', 'tbody td.control', function () {
                 if (this.classList.contains('opened')) {
                     this.classList.remove('opened');
                     this.innerHTML = '<i class="fas fa-plus-circle fa-2x"></i>';
@@ -75,9 +73,9 @@
                     this.innerHTML = '<i class="fas fa-minus-circle fa-2x"></i>';
                 }
             });
-            $('#blogs-table tbody').on('click', 'td:not(.control)', function () {
+            $('#question-table tbody').on('click', 'td:not(.control)', function () {
                 let data = table.row(this.parentElement).data();
-                window.location.href = window.location.origin + '/admin/blogs/' + data.id+'';
+                window.location.href = window.location.origin + '/admin/questions/' + data.id + '/edit';
             });
         });
     </script>
