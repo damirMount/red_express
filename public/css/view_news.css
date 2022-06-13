@@ -1,0 +1,15 @@
+@import url('./fonts.css');
+
+.red-express__news {
+    margin-top: 10.0694vw;
+}
+
+.red-express__news h1 {
+    font-family: 'Aktiv Grotesk Corp';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 32px;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #18191F;
+}
