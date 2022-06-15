@@ -17,7 +17,7 @@
 
 
         <div class="d-flex d-lg-none">
-            <a class="nav-link btn btn-sm-green d-lg-none d-block" href="#">Отследить</a>
+            @include('components.buttons.btn_search', ['text'=>"Отследить", 'class'=>"btn-sm-green"])
             <button
                 class="navbar-toggler border-0 ps-2 pe-0 ms-2"
                 type="button"
@@ -41,7 +41,7 @@
                 aria-label="Toggle navigation"
                 style="right: 5%; top: 1%"
             ></button>
-            <ul class="navbar-nav mt-5 red-express__links d-flex align-items-center">
+            <ul class="navbar-nav mt-5 mt-lg-0 red-express__links d-flex align-items-center">
                 <li class="nav-item mt-lg-0 mt-3">
                     <a class="nav-link"  href="#">О нас</a>
                 </li>
@@ -58,7 +58,7 @@
                     <a class="nav-link" href="#">FAQ</a>
                 </li>
                 <li class="nav-item mt-lg-0 mt-3">
-                    <a class="nav-link btn btn-green" href="#">Отследить груз</a>
+                    @include('components.buttons.btn_search', ['text'=>"Отследить груз", 'class'=>"btn-green"])
                 </li>
             </ul>
         </div>
