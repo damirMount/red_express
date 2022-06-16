@@ -48,5 +48,12 @@
         })
 
   </script>
+
+
+  <script>
+      $(document).on('click', '.search-cargo', function (e){
+          console.log('hello')
+      })
+  </script>
 @endsection
 <!-- Including in app.blade.php -->
