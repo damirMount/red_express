@@ -1,5 +1,4 @@
-<nav class="container-fluid px-lg-0 navbar navbar-expand-lg navbar-light red-express__header position-fixed bg-lg-none bg-white">
-    <div class="container px-0">
+<nav class="container justify-content-lg-around navbar navbar-expand-lg navbar-light red-express__header">
         <button
                 class="navbar-toggler d-none border-0 ps-2 pe-0 ms-2"
                 type="button"
@@ -11,9 +10,11 @@
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
-        <a class="navbar-brand logo" href="/">
-            <img src="/img/home/logo.png" alt="Logo">
-        </a>
+        <div>
+            <a class="navbar-brand" href="/">
+                <img src="/img/home/logo.png" alt="Logo">
+            </a>
+        </div>
 
 
         <div class="d-flex d-lg-none">
@@ -31,7 +32,7 @@
             </button>
         </div>
 
-        <div class="collapse navbar-collapse position-relative" id="navbarNav">
+        <div class="collapse navbar-collapse position-relative" style="flex-grow: 0;" id="navbarNav">
             <button
                 type="button"
                 class="btn-close position-absolute d-lg-none d-block"
@@ -41,7 +42,7 @@
                 aria-label="Toggle navigation"
                 style="right: 5%; top: 1%"
             ></button>
-            <ul class="navbar-nav mt-5 mt-lg-0 red-express__links d-flex align-items-center">
+            <ul class="navbar-nav mt-5 mt-lg-0 red-express__links d-flex ms-5 ms-lg-0 align-items-lg-center">
                 <li class="nav-item mt-lg-0 mt-3">
                     <a class="nav-link"  href="#">О нас</a>
                 </li>
@@ -62,5 +63,4 @@
                 </li>
             </ul>
         </div>
-    </div>
 </nav>

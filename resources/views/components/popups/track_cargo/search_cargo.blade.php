@@ -1,11 +1,11 @@
   <!-- Modal -->
-    <div
-        class="modal fade modal-search"
-        id="modalSearch"
-        tabindex="2"
-        aria-labelledby="modalSearch"
-        aria-hidden="true"
-    >
+<div
+    class="modal fade modal-search"
+    id="modalSearch"
+    tabindex="2"
+    aria-labelledby="modalSearch"
+    aria-hidden="true"
+>
     <div class="modal-dialog modal-sm modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header border-0">
@@ -22,31 +22,14 @@
                     type="text"
                     class="search-input"
                 >
-                <button class="search-cargo" id="Search">
+                <button class="search-cargo" data-bs-target="#modalResult" data-bs-toggle="modal" id="Search">
                     Найти
                 </button>
-                </div>
-            </div>
-            <div class="second-steps d-none">
-                @include('.components.popups.track_cargo.result')
             </div>
         </div>
       </div>
     </div>
   </div>
 
-@section('scripts')
-  <script>
-        const searchBtn = document.querySelector('#Search');
-        const firstStep = document.querySelector('.modal-search .first-step');
-        const secondStep = document.querySelector('.modal-search .second-step');
 
-        searchBtn.addEventListener('click', () => {
-            console.log('work');
-            firstStep.classList.toggle('d-none');
-            secondStep.classList.toggle('d-none');
-        })
-
-  </script>
-@endsection
 <!-- Including in app.blade.php -->
