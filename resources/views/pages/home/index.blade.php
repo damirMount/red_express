@@ -18,7 +18,7 @@
 @section('content')
 
     <section class="red-express__home home_blog" style="z-index: 0;">
-        <div class="container-fluid px-0 d-flex position-relative first-block mb-5 mb-md-0"  style="padding-top: 78px">
+        <div class="container-fluid px-0 d-flex position-relative first-block mb-5 mb-md-0"  style="padding-top: 237px">
             <div class="red-express__img">
                 {{-- <img src="/img/home/big-green-line-left.png" class="green-left d-none d-lg-block" alt="">
                 <img src="/img/home/big-pink-line-left.png" class="pink-left d-none d-lg-block" alt=""> --}}

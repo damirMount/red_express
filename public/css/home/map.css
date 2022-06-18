@@ -18,6 +18,10 @@
         width: 100%;
         height: auto;
     }
+    .map-pin {
+        width: 12px;
+        height: auto;
+    }
     .map-head {
         font-family: 'Inter';
         font-style: normal;
