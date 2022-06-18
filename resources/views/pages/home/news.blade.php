@@ -4,12 +4,12 @@
     ]
 @endphp
 
-<div class="row justify-content-lg-between">
+<div class="row mx-0 justify-content-lg-between">
     <h2 class="mb-5">
         Новости
     </h2>
     @for ($i = 0; $i < count($arrImg); $i++)
-        <div class="col-12 col-lg-4 px-xl-0 red-express__card mb-4 mb-md-auto">
+        <div class="col-12 col-md-6 col-lg-4 px-xl-0 red-express__card mb-4 mb-md-auto">
             @include('components.news.card', ['img'=>$arrImg[$i], 'href'=>'news/view/blog'])
         </div>
     @endfor
