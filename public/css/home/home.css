@@ -11,7 +11,9 @@
 .header-pos {
     top: 5%;
 }
-
+.first-block {
+    padding-top: 200px;
+}
 .red-express__look-cargo h1 {
     font-family: 'Inter';
     font-style: normal;
@@ -87,6 +89,17 @@
     top: 149px;
     right: 0;
     z-index: 2;
+}
+@media (max-width: 1200px) {
+    .first-block {
+        padding-top: 120px;
+    }
+    .red-express__img .car-big {
+        top: 115px;
+    }
+    .red-express__look-cargo h1 {
+        font-size: 38px;
+    }
 }
 
 @media (max-width: 991px) {
