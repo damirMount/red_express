@@ -10,7 +10,7 @@
         </h1>
         <div class="row justify-content-between">
 
-            <div class="col-8">
+            <div class="col-12 col-lg-8">
                 @include('pages.news.components.blog')
             </div>
 
