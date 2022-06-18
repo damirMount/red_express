@@ -43,18 +43,29 @@
     color: #118966;
 }
 
-@media (min-width: 320px) and (max-width: 1200px) {
+@media (min-width: 601px) and (max-width: 1200px) {
     .red-express__card-body {
         width: 305px;
     }
 }
 
 @media (max-width: 600px) {
-    .red-express__card {
-        max-width: 93.75vw;
+    .red-express__card-body .article {
+        max-width: 90.75vw;
+        width: 90.75vw;
+
     }
     .red-express__card-img {
         max-width: 93.75vw;
         max-height: 77.55vw;
+    }
+}
+
+@media (max-width: 320px) {
+    .red-express__card-body {
+        width: 295px;
+    }
+    .red-express__card-body .article {
+        width: 85vw;
     }
 }

@@ -1,4 +1,4 @@
-<div class="row pt-5 mt-5 mt-lg-5 pt-lg-5 mb-lg-4 pb-5">
+<div class="row pt-5 mt-5 mt-lg-5 pt-lg-5 mb-lg-4b pb-5">
     <div class="col-12 col-md-6 mx-md-auto mt-lg-3 text-center pt-2 pt-lg-1 mt-1">
         <h2 class="map-head">
             5+ представителей в 2 странах
@@ -25,6 +25,7 @@
                 style="bottom: 44%; left: 4%; transform: translate(-31%, -10%);"
             >
         </div>
+
     </div>
 
 </div>

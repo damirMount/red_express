@@ -69,25 +69,31 @@
                             </span>
                         </li>
                     </ul>
-                    <ul class="list-unstyled list-inline">
-                        <li class="list-inline-item">
+                    <ul class="list-unstyled list-inline mb-0">
+                        <li class="list-inline-item footer-social position-relative">
+                            <img src="/img/footer/instagram.svg" class="insta-icon position-absolute" alt="">
                             <a href="">
-                                <img src="/img/footer/instagram.svg" class="footer-icons" alt="">
+                                <div class="footer-href"></div>
                             </a>
                         </li>
-                        <li class="list-inline-item">
+                        <li class="list-inline-item footer-social position-relative">
+                            <img src="/img/footer/basketball.svg" class="basket-icon position-absolute" alt="">
                             <a href="">
-                                <img src="/img/footer/basketball.svg" class="footer-icons" alt="">
+                                <div class="footer-href"></div>
                             </a>
+
                         </li>
-                        <li class="list-inline-item">
+                        <li class="list-inline-item footer-social position-relative">
+                            <img src="/img/footer/twitter.svg" class="twitter-icon position-absolute" alt="">
                             <a href="">
-                                <img src="/img/footer/twitter.svg" class="footer-icons" alt="">
+                                <div class="footer-href"></div>
                             </a>
+
                         </li>
-                        <li class="list-inline-item">
+                        <li class="list-inline-item footer-social position-relative">
+                            <img src="/img/footer/youtube.svg" class="youtube-icon position-absolute" alt="">
                             <a href="">
-                                <img src="/img/footer/youtube.svg" class="footer-icons" alt="">
+                                <div class="footer-href"></div>
                             </a>
                         </li>
                     </ul>
