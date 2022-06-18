@@ -1,3 +1,40 @@
 .red-express__pagination .page-link{
     border: none !important;
+    font-family: 'AktivGroteskCorpRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    color: #44B069;
+}
+.red-express__pagination .page-link.active {
+    font-family: 'AktivGroteskCorpBold';
+    font-style: normal;
+    font-weight: 700;
+    color: #000000;
+}
+.red-express__pagination .page-link .arr-left,
+.red-express__pagination .page-link .arr-right {
+    width: 6px;
+    height: 12px;
+    transform: translateY(-15%);
+}
+.red-express__pagination .page-link .arr-left:focus,
+.red-express__pagination .page-link .arr-right:focus {
+    box-shadow: none;
+}
+
+.red-express__blogs-news {
+    margin-top: 145px;
+}
+.blogs_news {
+    margin-top: 60px !important;
+}
+.red-express__blogs-news h1 {
+    font-family: 'AktivGroteskCorpBold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    color: #000000;
 }

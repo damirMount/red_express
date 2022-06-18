@@ -4,11 +4,12 @@
 @endsection
 
 @section('content')
-    <div class="container red-express__news">
+    <div class="container blogs_news red-express__news">
+        <h1>
+            Заголовок новости
+        </h1>
         <div class="row justify-content-between">
-            <h1>
-                Заголовок новости
-            </h1>
+
             <div class="col-8">
                 @include('pages.news.components.blog')
             </div>
@@ -18,4 +19,32 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        let headerBlog = 50;
+        let headerClass = document.querySelector('.red-express__header');
+        let newsClass = document.querySelector('.red-express__news');
+
+        if(document.body.contains(headerClass)) {
+                headerClass.classList.add('mt-2', 'mt-lg-5');
+                headerClass.classList.remove('position-fixed', 'top-0', 'left-0');
+        }
+
+        document.addEventListener('scroll', () => {
+            if(window.scrollY >= headerBlog) {
+                newsClass.classList.remove('blogs_news');
+
+                headerClass.classList.remove('mt-2', 'mt-lg-5');
+                return headerClass.classList.add('position-fixed', 'top-0', 'left-0');
+            }
+            if(window.scrollY < headerBlog) {
+                newsClass.classList.add('blogs_news');
+
+                headerClass.classList.add('mt-2', 'mt-lg-5');
+                return headerClass.classList.remove('position-fixed', 'top-0', 'left-0');
+            }
+        })
+    </script>
 @endsection

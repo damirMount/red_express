@@ -1,43 +1,45 @@
-<div class="row">
-    <div class="col-6">
-        <h2>
+<div class="row red-express__price mt-5 mt-lg-0 pt-4 pt-lg-0">
+    <div class="col-12 col-md-8 col-lg-6 pt-2 pt-lg-0">
+        <h2 class="head pt-1 pt-lg-0">
             Цены
         </h2>
-        <p>
+        <p class="text">
             Если плотность груза меньше 205кг/м3 то цена на перевозку считается за куб, если больше то за килограммы
         </p>
-        <div class="red-express__price-table">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Город отправитель</th>
-                        <th scope="col">За 1 кг</th>
-                        <th scope="col">За 1 кубометр</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Москва</td>
-                        <td>35 руб</td>
-                        <td>6700 руб</td>
-                    </tr>
-                    <tr>
-                        <td>Казань</td>
-                        <td>35 руб</td>
-                        <td>6700 руб</td>
-                    </tr>
-                    <tr>
-                        <td>Самара</td>
-                        <td>40 руб</td>
-                        <td>7600 руб</td>
-                    </tr>
-                    <tr>
-                        <td>Уфа</td>
-                        <td>45 руб</td>
-                        <td>8600 руб</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+       <div class="col-12 col-md-10">
+            <div class="red-express__price-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Город отправитель</th>
+                            <th scope="col">За 1 кг</th>
+                            <th scope="col">За 1 кубометр</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="city">Москва</td>
+                            <td class="price">35 руб</td>
+                            <td class="price">6700 руб</td>
+                        </tr>
+                        <tr>
+                            <td class="city">Казань</td>
+                            <td class="price">35 руб</td>
+                            <td class="price">6700 руб</td>
+                        </tr>
+                        <tr>
+                            <td class="city">Самара</td>
+                            <td class="price">40 руб</td>
+                            <td class="price">7600 руб</td>
+                        </tr>
+                        <tr>
+                            <td class="city">Уфа</td>
+                            <td class="price">45 руб</td>
+                            <td class="price">8600 руб</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+       </div>
     </div>
 </div>

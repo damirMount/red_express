@@ -1,13 +1,7 @@
 header {
     font-family: 'Inter', sans-serif;
+    min-width: 320px;
 }
-/* .red-express__header {
-    top: 0;
-    left: 0;
-    min-height: 54px;
-    max-height: 66px;
-    z-index: 3;
-} */
 
 .modal .modal-text {
     font-family: 'Inter';
@@ -119,7 +113,6 @@ header {
         margin-right: 20vw;
     }
     .collapse:not(.show) {
-        display: block!important;
         transform: translate(1500px, -58px);
         transition: .2s ease-in;
     }
@@ -127,8 +120,8 @@ header {
         flex-basis: 100%;
         flex-grow: 1;
         align-items: center;
-        height: 100vh;
-        width: 60vw;
+        height: 299px;
+        width: 237px;
         border-radius: 10px;
         background-color: #FFFFFF;
         transform: translate(3%, -58px);
@@ -145,5 +138,10 @@ header {
         left: 0;
         min-height: 54px;
         max-height: 66px
+    }
+}
+@media (max-width: 320px) {
+    .modal .search-input {
+        width: 270px;
     }
 }

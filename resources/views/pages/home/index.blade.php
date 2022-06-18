@@ -1,6 +1,12 @@
 @extends('layouts.app')
 @section('styles')
-    <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/home/home.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href={{ asset('css/home/map.css') }}>
+    <link rel="stylesheet" href={{ asset('css/home/news.css') }}>
+    <link rel="stylesheet" href={{ asset('css/accordion.css')}}>
+    <link rel="stylesheet" href={{ asset('css/question.css')}}>
+
+
     <style>
         #MyRect {
         fill: #ffffff;
@@ -11,19 +17,19 @@
 
 @section('content')
 
-    <section style="z-index: 0;">
-        <div class="container-fluid px-0 d-flex position-relative first-block"  style="margin-top: 66px">
+    <section class="red-express__home home_blog" style="z-index: 0;">
+        <div class="container-fluid px-0 d-flex position-relative first-block mb-5 mb-md-0"  style="padding-top: 78px">
             <div class="red-express__img">
-                <img src="/img/home/big-green-line-left.png" class="green-left" alt="">
-                <img src="/img/home/big-pink-line-left.png" class="pink-left" alt="">
-                <img src="/img/home/bus.png" class="bus" alt="">
-                <img src="/img/home/bus-logo.png" class="bus-logo" alt="">
-                <img src="/img/home/big-green-line-right.png" class="green-right" alt="">
-                <img src="/img/home/small-pink-line-right.png" class="pink-right" alt="">
+                {{-- <img src="/img/home/big-green-line-left.png" class="green-left d-none d-lg-block" alt="">
+                <img src="/img/home/big-pink-line-left.png" class="pink-left d-none d-lg-block" alt=""> --}}
+                <img src="/img/home/car-big.png" class="car-big d-none d-lg-block" alt="">
+                <img src="/img/home/car.png" class="car d-block d-lg-none" alt="">
+                {{-- <img src="/img/home/big-green-line-right.png" class="green-right d-none d-lg-block" alt="">
+                <img src="/img/home/small-pink-line-right.png" class="pink-right d-none d-lg-block" alt=""> --}}
             </div>
             <div class="container">
-                <div class="row h-75">
-                    <div class="col-12 col-lg-7 px-lg-0 v d-flex align-items-center">
+                <div class="row h-lg-75">
+                    <div class="col-12 col-lg-7 px-lg-0 d-flex align-items-center">
                         <div class="red-express__look-cargo">
                             <h1>
                                 RED Express - Перевозка сборных грузов
@@ -39,13 +45,49 @@
     </section>
 
     <section>
-        <div class="container">
+        <div class="container px-lg-0">
             @include('pages.home.about_compony')
 
             @include('pages.home.price')
 
             @include('pages.home.representative_map')
+
+            @include('pages.home.news')
+
+            @include('pages.home.questions')
         </div>
     </section>
 
 @endsection
+
+@section('scripts')
+    <script>
+        let homeClass = document.querySelector('.red-express__home');
+        let headerClass = document.querySelector('.red-express__header');
+        let pos = 50;
+        let deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width; //check device width
+
+        if(deviceWidth > 991) {
+            if(document.body.contains(headerClass)) {
+                headerClass.classList.remove('top-0', 'left-0', 'bg-white');
+                headerClass.classList.add('header-pos');
+            }
+
+            document.addEventListener('scroll', () => {
+                if(window.scrollY >= pos) {
+                    headerClass.classList.remove('header-pos');
+                    headerClass.classList.add('top-0', 'left-0', 'bg-white');
+                    return homeClass.classList.remove('home_blog');
+                }
+                if(window.scrollY < pos) {
+                    headerClass.classList.remove('top-0', 'left-0', 'bg-white');
+                    headerClass.classList.add('header-pos');
+                    return homeClass.classList.add('home_blog');
+                }
+            })
+        }
+
+    </script>
+@endsection
+
+

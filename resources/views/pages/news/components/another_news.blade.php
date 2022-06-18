@@ -10,8 +10,8 @@
     </h2>
 
     @for($i = 0; $i < 3; $i++)
-        <div class="col-12">
-            @include('components.news.card', ['img'=>$arrImg[$i]])
+        <div class="col-12 another red-express__card mb-lg-4 pb-lg-3">
+            @include('components.news.card', ['img'=>$arrImg[$i], 'href'=>'/news/view/blog'])
         </div>
     @endfor
 
