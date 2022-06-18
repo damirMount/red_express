@@ -12,13 +12,13 @@
 @endsection
 
 @section('content')
-    <div class="container px-lg-0 blogs_news red-express__blogs-news">
+    <div class="container px-md-0 blogs_news red-express__blogs-news">
         <h1 class="pb-lg-4 mb-lg-4">Новости</h1>
-        <div class="row justify-content-lg-between py-lg-1 mx-0">
+        <div class="row justify-content-md-between py-lg-1 mx-0">
 
 
             @for ($i = 0; $i < 9; $i++)
-                <div class="col-12 col-lg-4 px-lg-0 red-express__card mb-5">
+                <div class="col-12 col-md-6 col-lg-4 px-0 red-express__card mb-5">
                     @include('components.news.card', ['img'=>$arrImg[$i], 'href'=>"news/view/blog"])
                 </div>
             @endfor

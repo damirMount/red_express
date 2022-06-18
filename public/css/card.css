@@ -10,7 +10,7 @@
 }
 
 .red-express__card-body {
-    width: 350px;
+    width: 100%;
     max-height: 135px;
     margin: 0 auto;
     margin-top: 20px;
@@ -45,27 +45,32 @@
 
 @media (min-width: 601px) and (max-width: 1200px) {
     .red-express__card-body {
-        width: 305px;
+        width: 100%;
     }
 }
 
 @media (max-width: 600px) {
-    .red-express__card-body .article {
-        max-width: 90.75vw;
-        width: 90.75vw;
-
+    .red-express__card {
+        width: 100%;
     }
     .red-express__card-img {
-        max-width: 93.75vw;
-        max-height: 77.55vw;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
     }
+    .red-express__card {
+        max-width: 400px;
+    }
+
+    .red-express__card-img {
+        max-width: 400px;
+        max-height: 400px;
+    }
+
 }
 
 @media (max-width: 320px) {
     .red-express__card-body {
-        width: 295px;
-    }
-    .red-express__card-body .article {
-        width: 85vw;
+        width: 100%;
     }
 }
