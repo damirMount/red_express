@@ -1,0 +1,19 @@
+.red-express__about-us h2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: clamp(28px, 8.75vw, 38px);
+    line-height: 140%;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #18191F;
+    margin-bottom: 35px;
+}
+.red-express__about-us p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(16px, 5vw, 18px);
+    line-height: 140%;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #616161;
+}

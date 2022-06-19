@@ -17,14 +17,14 @@
 
         <link href="{{ asset('css/index.css') }}" rel="stylesheet">
         <link href="{{ asset('css/header.css') }}" rel="stylesheet">
-
+        <link rel="stylesheet" href="{{ asset('css/footer.css')}}">
+        <link rel="stylesheet" href={{ asset('css/card.css') }} />
         @yield('styles')
 
     </head>
     <body>
-        <header class="py-2 container-fluid d-flex justify-content-center top-0 left-0 bg-lg-none bg-white red-express__header position-fixed" style="z-index: 3;">
-            @include('layouts.header')
-        </header>
+
+        @include('layouts.header')
 
         <div id="app">
             @yield('content')
