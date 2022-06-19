@@ -4,14 +4,14 @@
     <div class="p-3 bg-form card-body-admin">
         <div class="row p-3">
             <div class="col-12 col-sm-12 col-lg-12 col-md-10">
-                <form action="{{ route('admin.questions.update', $offer) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.offers.update', $offer) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="row justify-content-center">
                         <p class="font-weight-bold h2">Редактирование объекта</p>
                     </div>
                     <div class="form-group">
-                        <label for="name_field">Страна:<span class="text-danger">*</span></label>
+                        <label for="name_field">Город:<span class="text-danger">*</span></label>
                         <input id="name_field" type="text" class="form-control" name="country" value="{{ $offer->country }}" required>
                     </div>
                     <div class="form-group">

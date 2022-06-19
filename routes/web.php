@@ -26,20 +26,14 @@ Auth::routes([
 
 Route::redirect('admin', 'admin/blogs');
 
-Route::get('/', function () {
-    return view('pages.home.index');
-});
+Route::get('/', 'HomeController@index');
 
-Route::get('/news', function() {
-    return view('pages.news.blogs_news');
-});
+Route::get('/news', 'BlogController@listBlog')->name('list.blog');
 
-Route::get('/news/view/blog', function() {
-    return view('pages.news.view_news');
-});
+Route::get('/news/{blog}', 'BlogController@show')->name('new.show');
 
 Route::name('admin.')
-    ->middleware('auth')
+//    ->middleware()
     ->prefix('admin')
     ->group(function () {
         Route::resources([

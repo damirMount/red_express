@@ -200,7 +200,7 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav mainmenu">
                 <li class="sidebar-brand">
-                    <a href="{{ route('home') }}">Bio.kg</a>
+                    <a href="{{ route('home') }}">RedExpress</a>
                 </li>
                 <li>
                     <a href="{{ route('admin.blogs.index') }}"

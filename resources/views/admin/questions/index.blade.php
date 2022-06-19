@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('content')
-    <div class="col-auto">
+    <div class="col-auto d-flex justify-content-end">
         <a href="{{ route('admin.questions.create') }}" class="btn btn-success">{{ __('Создать') }}</a>
     </div>
     <div class="m-2 rounded">
