@@ -1,9 +1,18 @@
+@import url('./about_us.css');
+@import url('./price.css');
+
 .container-fluid.first-block {
     max-width: 1440px;
-    height: 752px;
-    background-image: url('../img/home/bg.png');
+    height: 821.51px;
+    background-image: url('../../img/home/bg.png');
     background-size: contain;
     background-repeat: no-repeat;
+}
+.header-pos {
+    top: 5%;
+}
+.first-block {
+    padding-top: 200px;
 }
 .red-express__look-cargo h1 {
     font-family: 'Inter';
@@ -57,7 +66,7 @@
     width: 34.7222222222vw;
     height: 9.77847222222vw;
     position: absolute;
-    bottom: 20;
+    bottom: 20%;
     right: 0;
     z-index: 1;
 }
@@ -67,11 +76,11 @@
     width: 4.30555555556vw;
     height: 8.09166666667vw;
     position: absolute;
-    bottom: 20;
+    bottom: 20%;
     right: 0;
     z-index: 1;
 }
-.red-express__img .bus {
+.red-express__img .car-big {
     max-width: 627px;
     max-height: 360px;
     width: 43.5416666667vw;
@@ -81,20 +90,60 @@
     right: 0;
     z-index: 2;
 }
-.red-express__img .bus-logo {
-    max-width: 269px;
-    max-height: 159px;
-    width: 18.6805555556vw;
-    height: 11.0416666667vw;
-    position: absolute;
-    top: 239px;
-    right: 0;
-    z-index: 2;
+@media (max-width: 1200px) {
+    .first-block {
+        padding-top: 120px;
+    }
+    .red-express__img .car-big {
+        top: 115px;
+    }
+    .red-express__look-cargo h1 {
+        font-size: 38px;
+    }
 }
 
-.red-express__map #map {
-    width: 100%;
-    height: 741px;
+@media (max-width: 991px) {
+    .red-express__img .car {
+        max-width: 500px;
+        width: 90vw;
+        height: auto;
+        position: absolute;
+        bottom: -5%;
+        right: 0;
+        z-index: 2;
+    }
+    .container-fluid.first-block {
+        height: 453px;
+    }
+    .container-fluid.first-block {
+        margin-top: 54px;
+        background-image: url(../../img/home/bg-md.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        max-height: 600px;
+        height: 100vw;
+    }
 }
 
+@media (max-width: 600px) {
+    .red-express__look-cargo h1 {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 28px;
+        line-height: 140%;
+        font-feature-settings: 'salt' on, 'liga' off;
+        color: #18191F;
+    }
+    .container-fluid.first-block {
+        background-image: url('../../img/home/mob-bg.png');
+        height: 700;
+        background-size: cover;
+    }
+}
 
+@media (max-width: 475px) {
+    .container-fluid.first-block {
+        height: 560px;
+    }
+}

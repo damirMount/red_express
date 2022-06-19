@@ -1,31 +1,31 @@
-<div class="row">
-    <div class="col-12 text-center">
-        <h2>
-            5+ представителей в 2 Городх
+<div class="row pt-5 mt-5 mt-lg-5 pt-lg-5 mb-lg-4b pb-5">
+    <div class="col-12 col-md-6 mx-md-auto mt-lg-3 text-center pt-2 pt-lg-1 mt-1">
+        <h2 class="map-head">
+            5+ представителей в 2 странах
         </h2>
     </div>
 
-    <div class="col-12 red-express__map">
-        <div id="map"></div>
+    <div class="col-12 red-express__map pb-lg-1 mb-lg-3">
+        <div class="map position-relative">
+            <img src="/img/home/home-map.png" class="img-fluid" alt="">
+            <img src="/img/map/map-pin.svg"
+                class="map-pin position-absolute"
+                style="bottom: 36%; left: 14%; transform: translate(-27%, -10%);"
+            >
+            <img src="/img/map/map-pin.svg"
+                class="map-pin position-absolute"
+                style="bottom: 41%; left: 13%; transform: translate(-9%, -10%);"
+            >
+            <img src="/img/map/map-pin.svg"
+                class="map-pin position-absolute"
+                style="bottom: 39%; left: 22%; transform: translate(-27%, -10%);"
+            >
+            <img src="/img/map/map-pin.svg"
+                class="map-pin position-absolute"
+                style="bottom: 44%; left: 4%; transform: translate(-31%, -10%);"
+            >
+        </div>
+
     </div>
 
 </div>
-
-@section('styles')
-<script
-    src="https://api-maps.yandex.ru/2.1/?apikey=23d7c047-c494-4e70-9270-ad8fdcee6ba4&lang=ru_RU"
-    type="text/javascript"
-></script>
-<script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
-<script>
-    ymaps.ready(function () {
-        var myMap = new ymaps.Map('map', {
-                center: [42.865388923088396, 74.60104350048829],
-                zoom: 12
-            }, {
-                searchControlProvider: 'yandex#search'
-            }
-        );
-    });
-</script>
-@endsection

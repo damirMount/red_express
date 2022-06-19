@@ -1,15 +1,47 @@
 @import url('./fonts.css');
 
 .red-express__news {
-    margin-top: 10.0694vw;
+    margin-top: 145px;
+}
+.blogs_news {
+    margin-top: 60px !important;
 }
 
 .red-express__news h1 {
-    font-family: 'Aktiv Grotesk Corp';
+    font-family: 'AktivGroteskCorpBold';
     font-style: normal;
     font-weight: bold;
-    font-size: 48px;
+    font-size: clamp(28px, 8.75vw, 48px);
     line-height: 32px;
     font-feature-settings: 'salt' on, 'liga' off;
     color: #18191F;
+    margin-bottom: 50px;
+}
+
+.red-express__blog .blog__desc {
+    margin-top: 50px;
+}
+.red-express__blog .blog__desc .text {
+    font-family: 'AktivGroteskCorpRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #18191F;
+}
+.red-express__side-cards h2 {
+    font-family: 'AktivGroteskCorpBold';
+    font-style: normal;
+    font-size: 24px;
+    line-height: 32px;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #18191F;
+}
+
+@media (max-width: 600px) {
+
+    .red-express__news h1 {
+        margin-bottom: 10vw;
+    }
 }
