@@ -22,7 +22,7 @@
 
     </head>
     <body>
-        <header>
+        <header class="py-2 container-fluid d-flex justify-content-center top-0 left-0 bg-lg-none bg-white red-express__header position-fixed" style="z-index: 3;">
             @include('layouts.header')
         </header>
 
@@ -30,12 +30,20 @@
             @yield('content')
 
             @include('components.popups.track_cargo.search_cargo')
+            @include('components.popups.track_cargo.result')
         </div>
 
         @include('layouts.footer')
 
+        <script src="{{ asset('js/app.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
         @yield('scripts')
+
+        <script>
+            $('modalResult').on('shown.bs.modal', function() {
+                $('modalSearch').hide();
+            })
+        </script>
     </body>
 </html>

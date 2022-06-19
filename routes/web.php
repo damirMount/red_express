@@ -44,3 +44,5 @@ Route::name('admin.')
     });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('getInvoice/', 'InvoiceController@getInvoice')->name('get.invoice');
