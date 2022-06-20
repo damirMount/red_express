@@ -46,19 +46,19 @@
                 ></button>
                 <ul class="navbar-nav mt-5 mt-lg-0 red-express__links d-flex ms-5 ms-lg-0 align-items-lg-center">
                     <li class="nav-item mt-lg-0 mt-3">
-                        <a class="nav-link"  href="#">О нас</a>
+                        <a class="nav-link"  href="/#about-company">О нас</a>
                     </li>
                     <li class="nav-item mt-lg-0 mt-3">
-                        <a class="nav-link" href="#">Цены</a>
+                        <a class="nav-link" href="/#price">Цены</a>
                     </li>
                     <li class="nav-item mt-lg-0 mt-3">
-                        <a class="nav-link" href="#">Представительство</a>
+                        <a class="nav-link" href="/#representatives">Представительство</a>
                     </li>
                     <li class="nav-item mt-lg-0 mt-3">
-                        <a class="nav-link" href="/news">Новости</a>
+                        <a class="nav-link" href="/#news">Новости</a>
                     </li>
                     <li class="nav-item mt-lg-0 mt-3">
-                        <a class="nav-link" href="#">FAQ</a>
+                        <a class="nav-link" href="/#faq">FAQ</a>
                     </li>
                     <li class="nav-item mt-lg-0 mt-3">
                         @include('components.buttons.btn_search', ['text'=>"Отследить груз", 'class'=>"btn-green"])

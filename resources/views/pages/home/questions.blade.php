@@ -1,4 +1,4 @@
-<div class="row justify-content-md-center mt-lg-5 pt-lg-1">
+<div class="row justify-content-md-center mt-lg-5 pt-lg-1" id="faq">
     <h2 class="ques-head text-center mt-lg-5 pt-lg-3">
         Популярные вопросы
     </h2>
