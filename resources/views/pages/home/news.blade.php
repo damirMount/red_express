@@ -4,7 +4,7 @@
     ]
 @endphp
 
-<div class="row mx-0 justify-content-lg-between">
+<div class="row mx-0 justify-content-lg-between" id="news">
     <h2 class="mb-5">
         Новости
     </h2>
