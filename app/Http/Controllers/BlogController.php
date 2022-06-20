@@ -15,6 +15,7 @@ class BlogController extends Controller
 
     public function show(Request $request, Blog $blog)
     {
+        dd($blog);
         return view('pages.news.view_news', compact('blog'));
     }
 }

@@ -25,6 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $offers = Offer::all();
+
         return view('pages.home.index', compact('offers'));
     }
 }
