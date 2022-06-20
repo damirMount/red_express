@@ -20,9 +20,10 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
+     * @param Request $request
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
         $offers = Offer::all();
         return view('pages.home.index', compact('offers'));

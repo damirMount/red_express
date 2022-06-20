@@ -19,31 +19,32 @@
         <div class="row">
             <nav class="red-express__pagination col-12">
                 <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                        <a href="#" class="page-link">
-                            <
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a href="#" class="page-link">
-                            1
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a href="#" class="page-link">
-                            2
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a href="#" class="page-link">
-                            3
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a href="#" class="page-link">
-                            >
-                        </a>
-                    </li>
+                    {{ $blogs->links() }}
+                    {{--<li class="page-item">--}}
+                        {{--<a href="#" class="page-link">--}}
+                            {{--<--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="page-item">--}}
+                        {{--<a href="#" class="page-link">--}}
+                            {{--1--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="page-item">--}}
+                        {{--<a href="#" class="page-link">--}}
+                            {{--2--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="page-item">--}}
+                        {{--<a href="#" class="page-link">--}}
+                            {{--3--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="page-item">--}}
+                        {{--<a href="#" class="page-link">--}}
+                            {{-->--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
                 </ul>
             </nav>
         </div>
