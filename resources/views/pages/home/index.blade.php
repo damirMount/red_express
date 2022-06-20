@@ -1,6 +1,12 @@
 @extends('layouts.app')
 @section('styles')
-    <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/home/home.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href={{ asset('css/home/map.css') }}>
+    <link rel="stylesheet" href={{ asset('css/home/news.css') }}>
+    <link rel="stylesheet" href={{ asset('css/accordion.css')}}>
+    <link rel="stylesheet" href={{ asset('css/question.css')}}>
+
+
     <style>
         #MyRect {
         fill: #ffffff;
@@ -79,14 +85,50 @@
         {{--</div>--}}
     </section>
 
-    <section class="mt-3">
+    <section>
         <div class="container">
             @include('pages.home.about_compony')
 
             @include('pages.home.price')
 
             @include('pages.home.representative_map')
+
+            @include('pages.home.news')
+
+            @include('pages.home.questions')
         </div>
     </section>
 
 @endsection
+
+@section('scripts')
+    <script>
+        let homeClass = document.querySelector('.red-express__home');
+        let headerClass = document.querySelector('.red-express__header');
+        let pos = 50;
+        let deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width; //check device width
+
+        if(deviceWidth > 991) {
+            if(document.body.contains(headerClass)) {
+                headerClass.classList.remove('top-0', 'left-0', 'bg-white');
+                headerClass.classList.add('header-pos');
+            }
+
+            document.addEventListener('scroll', () => {
+                if(window.scrollY >= pos) {
+                    headerClass.classList.remove('header-pos');
+                    headerClass.classList.add('top-0', 'left-0', 'bg-white');
+                    return homeClass.classList.remove('home_blog');
+                }
+                if(window.scrollY < pos) {
+                    headerClass.classList.remove('top-0', 'left-0', 'bg-white');
+                    headerClass.classList.add('header-pos');
+                    return homeClass.classList.add('home_blog');
+                }
+            })
+        }
+
+    </script>
+@endsection
+
+

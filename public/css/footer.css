@@ -1,0 +1,137 @@
+.red-express__footer {
+    background: #118966;
+    margin-top: 135px;
+}
+
+.red-express__footer .container {
+    padding-top: 71px;
+    padding-bottom: 71px;
+}
+
+.red-express__footer .red-express__footer-map {
+    max-width: 550px;
+    max-height: 468px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.footer-info .head-1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(20px, 6.25vw, 24px);
+    line-height: 29px;
+    color: #FFFFFF;
+}
+.footer-info .head {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(18px, 5.625vw, 22px);
+    line-height: 27px;
+    color: #FFFFFF;
+}
+.footer-info .text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(16px, 5vw, 18px);
+    line-height: 22px;
+    color: #FFFFFF;
+}
+.footer-info ul li {
+    margin-bottom: 5px;
+}
+.footer-info ul li:last-child {
+    margin-bottom: 0;
+}
+.footer-social {
+    background-color: #1d9d79;
+    border-radius: 50%;
+    margin-bottom: 5px!important;
+}
+.footer-social {
+    width: 24px;
+    height: 24px;
+}
+.insta-icon {
+    max-width: 100%;
+    height: auto;
+    top: 22%;
+    left: 22%;
+}
+
+.basket-icon {
+    max-width: 100%;
+    height: auto;
+    top: 22%;
+    left: 20%;
+}
+
+.twitter-icon {
+    max-width: 100%;
+    height: auto;
+    top: 27%;
+    left: 28%;
+}
+
+.youtube-icon {
+    max-width: 100%;
+    height: auto;
+    top: 27%;
+    left: 22%;
+}
+.footer-href {
+    width: 24px !important;
+    height: 24px !important;
+    color: transparent;
+}
+
+@media (max-width: 991px) {
+    .red-express__footer {
+        margin-top: 110px;
+    }
+
+    .footer-info .head-1 {
+        margin-top: 30px;
+    }
+    .footer-info .head {
+        margin-top: 20px;
+    }
+    .footer-info .text {
+        margin-top: 5px;
+    }
+    .footer-info .text:last-child {
+        margin-top: 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .red-express__footer {
+        margin-top: 85px;
+    }
+
+    .red-express__footer-map .map-pin{
+        width: 6.25vw;
+        height: auto;
+    }
+
+    .footer-info .head-1 {
+        margin-top: 21px;
+    }
+    .footer-info .head {
+        margin-top: 15px;
+    }
+    .footer-info .text {
+        margin-top: 5px;
+    }
+    .footer-info .text:last-child {
+        margin-top: 0;
+    }
+    .red-express__footer .container {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}

@@ -1,0 +1,71 @@
+.red-express__price .head {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: clamp(28px, 8.75vw, 38px);
+    line-height: 140%;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #18191F;
+    margin-bottom: 35px;
+}
+
+.red-express__price .text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(16px, 5vw, 18px);
+    line-height: 140%;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #616161;
+}
+
+.red-express__price-table thead tr {
+    background: #44B069;
+    color: #ffffff;
+}
+.red-express__price-table thead tr th {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 221%;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.red-express__price-table tbody tr td {
+    border: 1px solid #C4C4C4;
+}
+
+.red-express__price-table .city {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    color: #000000;
+}
+.red-express__price-table .price {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    color: #000000;
+}
+
+@media (max-width: 600px) {
+    .red-express__price-table {
+        overflow-x: scroll;
+        border-bottom: 1px solid #c4c4c4;
+    }
+    .red-express__price-table::scrollbar-thumb {
+        height: 11px;
+        width: 193px;
+    }
+    .red-express__price-table th, td {
+        min-width: 183px;
+    }
+}

@@ -1,0 +1,14 @@
+.btn-watch-news {
+    font-family: 'AktivGroteskCorpMedium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 14.5px 30px;
+    color: #FFFFFF;
+    background: #44B069;
+    border-radius: 10px;
+}
+.btn-watch-news:hover {
+    color: #FFFFFF;
+}

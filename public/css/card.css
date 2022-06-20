@@ -1,2 +1,76 @@
 @import url('./fonts.css');
 
+.red-express__card {
+    max-width: 353px;
+}
+
+.red-express__card-img {
+    max-width: 353px;
+    max-height: 292px;
+}
+
+.red-express__card-body {
+    width: 100%;
+    max-height: 135px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.red-express__card-body .title {
+    font-family: 'AktivGroteskCorpBold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #18191F;
+}
+.red-express__card-body .article {
+    font-family: 'AktivGroteskCorpRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #18191F;
+}
+.red-express__card-body .card-btn {
+    font-family: 'AktivGroteskCorpRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #118966;
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+    .red-express__card-body {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .red-express__card {
+        width: 100%;
+    }
+    .red-express__card-img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+    .red-express__card {
+        max-width: 400px;
+    }
+
+    .red-express__card-img {
+        max-width: 400px;
+        max-height: 400px;
+    }
+
+}
+
+@media (max-width: 320px) {
+    .red-express__card-body {
+        width: 100%;
+    }
+}

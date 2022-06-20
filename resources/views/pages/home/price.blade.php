@@ -1,9 +1,9 @@
-<div class="row">
-    <div class="col-6">
-        <h2>
+<div class="row red-express__price mt-5 mt-lg-5 pt-4 pt-lg-5" id="price">
+    <div class="col-12 col-md-8 col-lg-6 pt-2 pt-lg-1 mt-lg-3">
+        <h2 class="head pt-1 pt-lg-0">
             Цены
         </h2>
-        <p>
+        <p class="text">
             Если плотность груза меньше 205кг/м3 то цена на перевозку считается за куб, если больше то за килограммы
         </p>
         <div class="red-express__price-table">
