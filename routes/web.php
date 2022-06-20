@@ -30,7 +30,7 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/news', 'BlogController@listBlog')->name('list.blog');
 
-Route::get('/news/{blog}', 'BlogController@show')->name('new.show');
+Route::get('/new/{blog}', 'BlogController@show');
 
 Route::name('admin.')
 //    ->middleware()

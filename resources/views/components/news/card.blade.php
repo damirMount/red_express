@@ -3,11 +3,10 @@
 </div>
 <div class="red-express__card-body">
     <div class="title">
-        Заголовок новости
+        {{ $blog->title }}
     </div>
     <div class="article">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime vitae ducimus quo a impedit?
-        Temporibus debitis
+        {{ \Illuminate\Support\Str::limit($blog->desc, 100, '...') }}
     </div>
     <a href='{{route('new.show', $blog->id)}}' class="btn card-btn ps-0">
         Подробнее>>

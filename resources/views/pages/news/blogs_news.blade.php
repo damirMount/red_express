@@ -52,3 +52,31 @@
         </div>
     </div>
 @endsection
+
+@section('scripts')
+    <script>
+        let headerBlock = 50;
+        let headerClass = document.querySelector('.red-express__header');
+        let blogsClass = document.querySelector('.red-express__blogs-news');
+
+        if(document.body.contains(headerClass)) {
+            headerClass.classList.add('mt-2', 'mt-lg-5');
+            headerClass.classList.remove('position-fixed', 'top-0', 'left-0');
+        }
+
+        document.addEventListener('scroll', () => {
+            if(window.scrollY >= headerBlock) {
+                blogsClass.classList.remove('blogs_news');
+
+                headerClass.classList.remove('mt-2', 'mt-lg-5');
+                return headerClass.classList.add('position-fixed', 'top-0', 'left-0');
+            }
+            if(window.scrollY < headerBlock) {
+                blogsClass.classList.add('blogs_news');
+
+                headerClass.classList.add('mt-2', 'mt-lg-5');
+                return headerClass.classList.remove('position-fixed', 'top-0', 'left-0');
+            }
+        })
+    </script>
+@endsection
