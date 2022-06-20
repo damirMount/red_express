@@ -15,7 +15,7 @@
             </div>
 
             <div class="col-12 col-lg-3 px-0">
-                @include('pages.news.components.another_news')
+                @include('pages.news.components.another_news', compact('another_blogs'))
             </div>
         </div>
     </div>

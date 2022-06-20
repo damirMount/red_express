@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use App\Offer;
+use App\Question;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,6 +28,8 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $offers = Offer::all();
-        return view('pages.home.index', compact('offers'));
+        $blogs = Blog::latest()->take(3)->get();
+        $questions = Question::latest()->take(5)->get();
+        return view('pages.home.index', compact('offers', 'blogs', 'questions'));
     }
 }

@@ -82,7 +82,6 @@
                     </div>
                 </div>
             </div>
-        {{--</div>--}}
     </section>
 
     <section>
@@ -99,36 +98,6 @@
         </div>
     </section>
 
-@endsection
-
-@section('scripts')
-    <script>
-        let homeClass = document.querySelector('.red-express__home');
-        let headerClass = document.querySelector('.red-express__header');
-        let pos = 50;
-        let deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width; //check device width
-
-        if(deviceWidth > 991) {
-            if(document.body.contains(headerClass)) {
-                headerClass.classList.remove('top-0', 'left-0', 'bg-white');
-                headerClass.classList.add('header-pos');
-            }
-
-            document.addEventListener('scroll', () => {
-                if(window.scrollY >= pos) {
-                    headerClass.classList.remove('header-pos');
-                    headerClass.classList.add('top-0', 'left-0', 'bg-white');
-                    return homeClass.classList.remove('home_blog');
-                }
-                if(window.scrollY < pos) {
-                    headerClass.classList.remove('top-0', 'left-0', 'bg-white');
-                    headerClass.classList.add('header-pos');
-                    return homeClass.classList.add('home_blog');
-                }
-            })
-        }
-
-    </script>
 @endsection
 
 

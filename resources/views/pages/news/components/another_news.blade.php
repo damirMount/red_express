@@ -10,10 +10,10 @@
         Еще новости
     </h2>
 
-    @for($i = 0; $i < 4; $i++)
+    @foreach($another_blogs as $blog)
         <div class="col-12 col-md-6 col-lg-12 another red-express__card mb-lg-4 pb-lg-3 mb-3">
-            @include('components.news.card', ['img'=>$arrImg[$i], 'href'=>'/news/view/blog'])
+            @include('components.news.card', compact('blog'))
         </div>
-    @endfor
+    @endforeach
 
 </div>
