@@ -8,13 +8,19 @@
     max-width: 353px;
     max-height: 292px;
 }
+.red-express__card-img .img-fluid {
+    height: clamp(248px, 80.625vw, 292px);
+    object-fit: cover;
+}
+
 
 .red-express__card-body {
     width: 100%;
-    max-height: 135px;
+    max-height: 450px;
     margin: 0 auto;
     margin-top: 20px;
 }
+
 .red-express__card-body .title {
     font-family: 'AktivGroteskCorpBold';
     font-style: normal;
