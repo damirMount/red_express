@@ -104,10 +104,6 @@
 }
 
 @media (max-width: 991px) {
-
-    html {
-        overflow-x: hidden;
-    }
     .red-express__img .car {
         max-width: 500px;
         width: 90vw;
