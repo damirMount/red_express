@@ -15,10 +15,7 @@ class BlogController extends Controller
 
     public function show(Request $request, Blog $blog)
     {
-        if ($request->has('invoice')){
-
-        }
-        $another_blogs = Blog::where('id','<>',$blog->id)->get();
+        $another_blogs = Blog::where('id', '<>', $blog->id)->get();
         return view('pages.news.view_news', compact('blog', 'another_blogs'));
     }
 }

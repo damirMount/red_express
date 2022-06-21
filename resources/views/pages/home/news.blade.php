@@ -1,10 +1,10 @@
 
 <div class="row mx-0 justify-content-lg-between" id="news">
-    <h2 class="mb-5">
+    <h2 class="my-5">
         Новости
     </h2>
     @foreach($blogs as $blog)
-        <div class="col-12 col-md-6 col-lg-4 px-xl-0 red-express__card mb-4 mb-md-auto">
+        <div class="col-12 col-md-6 col-lg-4 red-express__card mb-4 mb-md-auto">
             @include('components.news.card', compact('blog'))
         </div>
     @endforeach

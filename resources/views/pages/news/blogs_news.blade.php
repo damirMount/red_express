@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container" id="list_news">
         <h1>Новости</h1>
         <div class="row">
             @foreach ($blogs as $blog)
@@ -22,4 +22,9 @@
             </div>
         </div>
     </div>
+    <style>
+        #list_news{
+            margin-top: 80px;
+        }
+    </style>
 @endsection

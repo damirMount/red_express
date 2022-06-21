@@ -25,7 +25,7 @@
                         >
 
                         <p class="text-danger d-none" id="empty-cargo"></p>
-                        <button class="search-cargo" data-bs-toggle="modal" id="Search">
+                        <button class="search-cargo" id="Search">
                             Найти
                         </button>
                     </div>
@@ -41,7 +41,7 @@
 <script>
     $(document).on('click', '#Search', function (e) {
         let invoice = $('#invoice').val();
-
+        $('#empty-cargo').text('');
         $.ajax({
             url: '{{ route('get.invoice') }}',
             method: 'get',
@@ -49,6 +49,7 @@
                 'invoice': invoice,
             },
             success: function (data) {
+                    console.log(data);
                 if (data.number_id) {
                     $('#cargo').text(data.number_id)
                     $('#status').text(data.status)

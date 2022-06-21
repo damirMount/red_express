@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Http;
 
 class InvoiceGetter
 {
-    public function getInvoice($invoice)
+    public static function getInvoice($invoice)
     {
         $response = Http::withBasicAuth('обмен', 'qa1')
             ->withHeaders([
@@ -26,14 +26,14 @@ class InvoiceGetter
 
         if (isset($cargo['number_id']))
         {
-            return $this->timeCalc($cargo);
+            return self::timeCalc($cargo);
         }
         else{
             return $cargo;
         }
     }
 
-    static public function timeCalc($cargo)
+    static private function timeCalc($cargo)
     {
         $time = Carbon::now()->diffInDays($cargo['time'], false);
         if ($time > 0){
