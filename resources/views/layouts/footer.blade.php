@@ -54,28 +54,28 @@
                     </ul>
                     <ul class="list-unstyled list-inline mb-0">
                         <li class="list-inline-item footer-social position-relative">
-                            <img src="/img/footer/instagram.svg" class="insta-icon position-absolute" alt="">
                             <a href="">
+                                <img src="/img/footer/instagram.svg" class="insta-icon position-absolute" alt="">
                                 <div class="footer-href"></div>
                             </a>
                         </li>
                         <li class="list-inline-item footer-social position-relative">
-                            <img src="/img/footer/basketball.svg" class="basket-icon position-absolute" alt="">
                             <a href="">
-                                <div class="footer-href"></div>
-                            </a>
-
-                        </li>
-                        <li class="list-inline-item footer-social position-relative">
-                            <img src="/img/footer/twitter.svg" class="twitter-icon position-absolute" alt="">
-                            <a href="">
+                                <img src="/img/footer/basketball.svg" class="basket-icon position-absolute" alt="">
                                 <div class="footer-href"></div>
                             </a>
 
                         </li>
                         <li class="list-inline-item footer-social position-relative">
-                            <img src="/img/footer/youtube.svg" class="youtube-icon position-absolute" alt="">
                             <a href="">
+                                <img src="/img/footer/twitter.svg" class="twitter-icon position-absolute" alt="">
+                                <div class="footer-href"></div>
+                            </a>
+
+                        </li>
+                        <li class="list-inline-item footer-social position-relative">
+                            <a href="">
+                                <img src="/img/footer/youtube.svg" class="youtube-icon position-absolute" alt="">
                                 <div class="footer-href"></div>
                             </a>
                         </li>
@@ -110,10 +110,10 @@
             ['ул. Максима Горького, 1в, ст 5'],
             ['ул. Элебесова, 74/1'],
         ]
-        for (let i=0; i< objects.length; i++) {
+        for (let i = 0; i < objects.length; i++) {
             myMap.geoObjects.add(new ymaps.Placemark(objects[i], {
                     balloonContentHeader: "Адрес",
-                    balloonContentBody: "<em>"+ addresses[i] +"</em>",
+                    balloonContentBody: "<em>" + addresses[i] + "</em>",
                 },
                 {
                     preset: 'islands#darkGreenDotIcon',

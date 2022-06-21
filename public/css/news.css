@@ -6,12 +6,14 @@
     font-size: 20px;
     line-height: 32px;
     color: #44B069;
+    background-color: transparent;
+    box-shadow: none;
 }
-.red-express__pagination .page-link.active {
-    font-family: 'AktivGroteskCorpBold';
+.red-express__pagination .page-item.active .page-link {
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     color: #000000;
+    background-color: transparent;
 }
 .red-express__pagination .page-link .arr-left,
 .red-express__pagination .page-link .arr-right {
