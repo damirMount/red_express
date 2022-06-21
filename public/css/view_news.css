@@ -21,7 +21,8 @@
 .red-express__blog .blog__desc {
     margin-top: 50px;
 }
-.red-express__blog .blog__desc
+.red-express__blog .blog__desc,
+.red-express__blog div p
 {
     font-family: 'AktivGroteskCorpRegular';
     font-style: normal;
