@@ -7,7 +7,10 @@
     margin-top: 60px !important;
 }
 
-.red-express__news h2 {
+.red-express__news h1,
+.red-express__news h2,
+.red-express__news h3,
+.red-express__news h4 {
     font-family: 'AktivGroteskCorpBold';
     font-style: normal;
     font-weight: bold;
