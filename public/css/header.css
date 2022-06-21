@@ -112,7 +112,7 @@ header {
     .logo {
         margin-right: 20vw;
     }
-    .collapse:not(.show) {
+    .navbar-collapse.collapse:not(.show) {
         transform: translate(1500px, -58px);
         transition: .2s ease-in;
         display: block;
