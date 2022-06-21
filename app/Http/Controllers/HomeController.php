@@ -30,6 +30,15 @@ class HomeController extends Controller
         $offers = Offer::all();
         $blogs = Blog::latest()->take(3)->get();
         $questions = Question::latest()->take(5)->get();
-        return view('pages.home.index', compact('offers', 'blogs', 'questions'));
+        $questionIds = Question::latest()->take(5)->pluck('id')->toArray();
+        return view('pages.home.index', compact('offers', 'blogs', 'questions', 'questionIds'));
+    }
+
+    public function getQuestions(Request $request)
+    {
+        $questions = Question::whereNotIn('id', $request->ids)->get();
+        $view = view('components.accordion.ques_accordion', compact('questions'))->render();
+
+        return response()->json(['view' => $view]);
     }
 }
