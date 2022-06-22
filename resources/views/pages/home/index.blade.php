@@ -104,7 +104,7 @@
 
             @include('pages.home.news')
 
-            @include('pages.home.questions')
+               @include('pages.home.questions')
         </div>
     </section>
 
@@ -133,4 +133,22 @@
     </script>
 @endsection
 
+@section('scripts')
 
+    <script>
+        $(document).on('click', '#get-questions', function (e) {
+            let ids = @json($questionIds);
+            $.ajax({
+                url: '{{ route('get.questions') }}',
+                method: 'get',
+                data: {
+                    'ids': ids,
+                },
+                success: function (data) {
+                    $('#accordionFlushExample').append(data.view);
+                    $('#get-questions').addClass('d-none');
+                },
+            })
+        })
+    </script>
+@endsection

@@ -3,10 +3,16 @@
         Популярные вопросы
     </h2>
     <div class="col-12 col-md-10 col-lg-9 mb-4">
-        @include('components.accordion.ques_accordion')
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            @include('components.accordion.ques_accordion')
+        </div>
     </div>
 
     <div class="col-12 text-center mt-lg-4 pt-lg-3">
-        <a href="/news" class="btn btn-watch-news">Посмотреть все новости</a>
+        <button id="get-questions" type="button" class="btn btn-green">
+            Еще
+        </button>
     </div>
 </div>
+
+
