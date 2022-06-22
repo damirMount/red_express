@@ -5,12 +5,12 @@
 
 @section('content')
     <div class="container blogs_news red-express__news">
-        <h1>
-            Заголовок новости
-        </h1>
         <div class="row">
 
             <div class="col-12 col-lg-9">
+                <h2>
+                    {{ $blog->title }}
+                </h2>
                 @include('pages.news.components.blog')
             </div>
 

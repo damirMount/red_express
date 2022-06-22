@@ -104,7 +104,7 @@
 
             @include('pages.home.news')
 
-               @include('pages.home.questions')
+            @include('pages.home.questions')
         </div>
     </section>
 
@@ -131,10 +131,6 @@
 
         })
     </script>
-@endsection
-
-@section('scripts')
-
     <script>
         $(document).on('click', '#get-questions', function (e) {
             let ids = @json($questionIds);
@@ -151,4 +147,5 @@
             })
         })
     </script>
+
 @endsection

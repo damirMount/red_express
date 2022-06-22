@@ -90,6 +90,14 @@
     right: 0;
     z-index: 2;
 }
+
+.ymaps-2-1-79-inner-panes {
+    border-radius:  46px;
+}
+
+.ymaps-2-1-79-map {
+    border-radius:  46px;
+}
 @media (max-width: 1200px) {
     .first-block {
         padding-top: 120px;
@@ -145,5 +153,11 @@
 @media (max-width: 475px) {
     .container-fluid.first-block {
         height: 560px;
+    }
+    .mobile-margin{
+        margin-top: 150px;
+    }
+    .mobile-margin-btn {
+        margin-top: 210px;
     }
 }

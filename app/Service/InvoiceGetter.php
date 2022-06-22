@@ -33,7 +33,7 @@ class InvoiceGetter
         }
     }
 
-    static private function timeCalc($cargo)
+    static public function timeCalc($cargo)
     {
         $time = Carbon::now()->diffInDays($cargo['time'], false);
         if ($time > 0){
