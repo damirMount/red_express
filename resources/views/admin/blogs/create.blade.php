@@ -4,6 +4,9 @@
     <div class="p-3 bg-form card-body-admin">
         <div class="row">
             <div class="col-12 col-sm-10 col-lg-12 col-md-10 pb-5 px-5">
+                @if ($errors->has('image'))
+                    <span class="text-danger">{{ $errors->first('image') }}</span>
+                @endif
                 <form action="{{ route('admin.blogs.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row justify-content-center">
@@ -11,12 +14,12 @@
                     </div>
                     <div class="form-group">
                         <label for="title_input">Заголовок:<span class="text-danger">*</span></label>
-                        <input id="title_input" type="text" class="form-control" name="title" required>
+                        <input id="title_input" type="text" class="form-control" name="title" required value="{{old('title')}}">
                     </div>
                     <div class="form-group">
                         <label for="desc_textarea">Описание:<span class="text-danger">*</span></label>
                         <textarea id="desc_textarea" class="form-control" name="desc"
-                                  required></textarea>
+                                  required>{{old('desc')}}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="banner_input">Баннер:<span class="text-danger">*</span></label>
@@ -26,7 +29,7 @@
                     <div class="form-group">
                         <label for="content_textarea">Контент:<span class="text-danger">*</span></label>
                         <textarea id="content_textarea" type="text" class="form-control tinymce-editor"
-                                  name="content"></textarea>
+                                  name="content">{{old('content')}}</textarea>
                     </div>
                     <button type="submit" title="{{ __('Добавить') }}"
                             class="btn btn-success">{{ __('Добавить') }}</button>
