@@ -20,7 +20,7 @@ class InvoiceGetter
             ->withHeaders([
                 'Content-Type' => 'application/json; charset=utf-8'
             ])
-            ->get('http://212.112.99.14:8080/mcargoupdate/hs/getstatusinvoice/.' . $invoice);
+            ->get('http://212.112.99.14:8080/mcargoupdate/hs/getstatusinvoice/' . $invoice);
 
         $cargo = json_decode($response, true);
 

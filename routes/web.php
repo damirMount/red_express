@@ -28,6 +28,7 @@ Auth::routes([
 Route::redirect('admin', 'admin/blogs');
 
 Route::get('/', 'HomeController@index');
+Route::get('/qr', 'HomeController@index');
 
 Route::get('/news', 'BlogController@listBlog')->name('list.blog');
 
