@@ -1,6 +1,7 @@
 @import url('./about_us.css');
 @import url('./price.css');
 
+
 .container-fluid.first-block {
     max-width: 1440px;
     height: 821.51px;
@@ -120,6 +121,7 @@
         right: 0;
         z-index: 2;
     }
+
     .container-fluid.first-block {
         height: 453px;
     }
