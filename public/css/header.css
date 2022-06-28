@@ -123,6 +123,9 @@ color: #000000;
   text-align: right;
   color: #118966;
 }
+.red-modal-results .result-phones li a {
+    text-decoration: none;
+}
 .red-modal-results .result-phones li,
 .red-modal-results .result-phones li a {
   font-family: 'Inter';
@@ -192,7 +195,7 @@ color: #000000;
 
 @media (min-width: 576px) {
     .modal-sm {
-        max-width: 380px;
+        max-width: 480px;
     }
 }
 
