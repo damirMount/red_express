@@ -2,8 +2,142 @@ header {
     font-family: 'Inter', sans-serif;
     min-width: 320px;
 }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-.modal .modal-text {
+.bd-example-modal {
+    background-color: #fafafa;
+}
+.bd-example-modal .modal {
+    position: static;
+    display: block;
+}
+
+.bd-example>:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 576px) {
+  .bd-example {
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 1px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+.bd-example {
+    position: relative;
+    padding: 1rem;
+    margin: 1rem -0.75rem 0;
+    border: solid #dee2e6;
+    border-width: 1px 0 0;
+}
+}
+
+.red-modal-title {
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+color: #44B069;
+}
+.red-modal-line {
+  height: 1px;
+  border-bottom: 1px solid #118966;
+}
+.red-modal-text {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+color: #000000;
+}
+.red-modal-form .search-input {
+  height: 40px;
+  width: 67%;
+  border: 1px solid #C4C4C4;
+  border-radius: 10px;
+  padding-left: 8px;
+}
+.red-modal-form .search-btn {
+  width: 30%;
+  height: 40px;
+  border: none;
+  background: #44B069;
+  border-radius: 6px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  font-feature-settings: 'salt' on, 'liga' off;
+  color: #FFFFFF;
+}
+
+.red-modal-results .result {
+  padding-top: 27px;
+  padding-bottom: 7px;
+  border-bottom: 1px dashed #C4C4C4;
+}
+.red-modal-results .result:last-child {
+  border-bottom: none;
+}
+.red-modal-results .head {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: left;
+  color: #333333;
+}
+
+.red-modal-results .result-name {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #118966;
+}
+.red-modal-results .result-text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: right;
+  color: #000000;
+}
+.red-modal-results .result-text.status {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: right;
+  color: #118966;
+}
+.red-modal-results .result-phones li,
+.red-modal-results .result-phones li a {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: right;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.red-modal-results .result-phones li svg {
+  margin-right: 5px ;
+}
+/* .modal .modal-text {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -54,7 +188,7 @@ header {
     z-index: 1;
     margin-top: 45px;
     margin-bottom: 32px;
-}
+} */
 
 @media (min-width: 576px) {
     .modal-sm {
