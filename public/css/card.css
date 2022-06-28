@@ -1,12 +1,12 @@
 @import url('./fonts.css');
 
 .red-express__card {
-    max-width: 353px;
+    /*max-width: 353px;*/
 }
 
 .red-express__card-img {
-    max-width: 353px;
-    max-height: 292px;
+    /*max-width: 353px;*/
+    /*max-height: 292px;*/
 }
 .red-express__card-img .img-fluid {
     height: clamp(248px, 80.625vw, 292px);
@@ -64,14 +64,14 @@
         width: 100%;
         height: auto;
     }
-    .red-express__card {
-        max-width: 400px;
-    }
+    /*.red-express__card {*/
+        /*max-width: 400px;*/
+    /*}*/
 
-    .red-express__card-img {
-        max-width: 400px;
-        max-height: 400px;
-    }
+    /*.red-express__card-img {*/
+        /*max-width: 400px;*/
+        /*max-height: 400px;*/
+    /*}*/
 
 }
 

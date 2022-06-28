@@ -1,19 +1,14 @@
-@php
-    $arrImg = [
-        'img/blog/card/person-1.png','img/blog/card/person-2.png','img/blog/card/person-3.png'
-    ]
-@endphp
 
 <div class="row mx-0 justify-content-lg-between" id="news">
-    <h2 class="mb-5">
+    <h2 class="my-5">
         Новости
     </h2>
-    @for ($i = 0; $i < count($arrImg); $i++)
-        <div class="col-12 col-md-6 col-lg-4 px-xl-0 red-express__card mb-4 mb-md-auto">
-            @include('components.news.card', ['img'=>$arrImg[$i], 'href'=>'news/view/blog'])
+    @foreach($blogs as $key => $blog)
+        <div class="col-12 col-md-6 col-lg-4 red-express__card mb-4 mb-md-auto {{ $key == 0 ? '' : 'mobile-margin' }}">
+            @include('components.news.card', compact('blog'))
         </div>
-    @endfor
-    <div class="col-12 text-center mt-lg-4 pt-lg-3">
-        <a href="/news" class="btn btn-watch-news">Посмотреть все новости</a>
+    @endforeach
+    <div class="col-12 text-center mt-lg-4 pt-lg-3 mobile-margin-btn">
+        <a href="/news" class="btn btn-watch-news mt-sm-5">Посмотреть все новости</a>
     </div>
 </div>

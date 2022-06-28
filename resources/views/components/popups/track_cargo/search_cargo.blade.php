@@ -1,4 +1,4 @@
-  <!-- Modal -->
+<!-- Modal -->
 <div
     class="modal fade modal-search"
     id="modalSearch"
@@ -84,6 +84,44 @@
             </div>
           </div>
     </div>
-  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+<script>
+    $(document).on('click', '#Search', function (e) {
+        let invoice = $('#invoice').val();
+        $('#empty-cargo').text('');
+        $.ajax({
+            url: '{{ route('get.invoice') }}',
+            method: 'get',
+            data: {
+                'invoice': invoice,
+            },
+            success: function (data) {
+                    console.log(data);
+                if (data.number_id) {
+                    $('#cargo').text(data.number_id)
+                    $('#status').text(data.status)
+                    $('#country').text(data.country)
+                    $('#time').text(data.time)
+
+                    $('#invoice').val('');
+                    $('#modalSearch').modal('toggle');
+                    $('#modalResult').modal('show');
+                }
+                else {
+                    $('#empty-cargo').text(data.status);
+                    $('#empty-cargo').removeClass('d-none');
+                }
+                // console.log(data.country)
+            },
+            // error: function (error) {
+            //     console.log(error);
+            // }
+        })
+    })
+</script>
 
 <!-- Including in app.blade.php -->

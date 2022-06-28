@@ -1,15 +1,14 @@
 <div class="red-express__card-img">
-    <img src={{ asset($img)}} class="img-fluid" alt="">
+    <img src={{ asset('storage/' . $blog->banner)}} class="img-fluid" style="border-radius:  18px;" alt="">
 </div>
 <div class="red-express__card-body">
     <div class="title">
-        Заголовок новости
+        {{ $blog->title }}
     </div>
     <div class="article">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime vitae ducimus quo a impedit?
-        Temporibus debitis
+        {{ \Illuminate\Support\Str::limit($blog->desc, 100, '...') }}
     </div>
-    <a href='{{$href}}' class="btn card-btn ps-0">
+    <a href='{{route('new.show', $blog->id)}}' class="btn card-btn ps-0">
         Подробнее>>
     </a>
 </div>

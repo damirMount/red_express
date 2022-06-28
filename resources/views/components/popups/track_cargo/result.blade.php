@@ -19,7 +19,7 @@
                         </p>
                     </div>
                     <div class="col-6">
-                        <p class="search-result">
+                        <p class="search-result" id="cargo">
                             486060
                         </p>
                     </div>
@@ -30,7 +30,7 @@
                         </p>
                     </div>
                     <div class="col-6">
-                        <p class="search-result">
+                        <p class="search-result" id="status">
                             Ожидается
                         </p>
                     </div>
@@ -41,7 +41,7 @@
                         </p>
                     </div>
                     <div class="col-6">
-                        <p class="search-result">
+                        <p class="search-result" id="country">
                             Казахстан
                         </p>
                     </div>
@@ -52,7 +52,7 @@
                         </p>
                     </div>
                     <div class="col-6">
-                        <p class="search-result">
+                        <p class="search-result" id="time">
                             2 дня
                         </p>
                     </div>

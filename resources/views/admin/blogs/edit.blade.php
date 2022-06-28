@@ -12,14 +12,15 @@
                     </div>
                     <div class="form-group">
                         <label for="title_input">Заголовок</label>
-                        <input id="title_input" type="text" class="form-control" value="{{ $blog->title }}"
+                        <input id="title_input" type="text" class="form-control"
+                               value="{{ old('content', $blog->title)}}"
                                name="title"
                                required>
                     </div>
                     <div class="form-group">
                         <label for="desc_textarea">Описание</label>
                         <textarea id="desc_textarea" type="text" class="form-control"
-                                  name="desc">{{ $blog->desc }}</textarea>
+                                  name="desc">{{ old('content', $blog->desc) }}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="banner_input">Баннер:<span class="text-danger">*</span></label>
@@ -28,7 +29,7 @@
                     <div class="form-group">
                         <label for="content_textarea">Контент:<span class="text-danger">*</span></label>
                         <textarea id="content_textarea" type="text" class="form-control tinymce-editor"
-                                  name="content">{!! $blog->content !!}</textarea>
+                                  name="content">{!! old('content',$blog->content) !!}</textarea>
                     </div>
                     <button type="submit" title="{{ __('Изменить') }}"
                             class="btn btn-success">{{ __('Изменить') }}</button>
