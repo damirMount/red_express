@@ -48,7 +48,7 @@
 
                     <div class="col-6">
                         <p>
-                            Прибытие через:
+                            Прибытие:
                         </p>
                     </div>
                     <div class="col-6">

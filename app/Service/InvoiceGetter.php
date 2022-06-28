@@ -39,8 +39,20 @@ class InvoiceGetter
         if ($time > 0){
             $cargo['time'] = $time . ' дня';
         }
+        elseif ($time == 0){
+            $cargo['time'] =  abs($time) . ' дней';
+        }
         else{
-            $cargo['time'] = abs($time) . ' дня назад';
+            if (abs($time) == 1) {
+                $cargo['time'] = abs($time) . ' день назад';
+            }
+            elseif (abs($time) >= 2 && abs($time) <= 4) {
+                $cargo['time'] = abs($time) . ' дня назад';
+
+            }
+            else{
+                $cargo['time'] = abs($time) . ' дней назад';
+            }
         }
 
         return $cargo;

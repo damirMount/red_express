@@ -1,6 +1,6 @@
 
 <div class="row mx-0 justify-content-lg-between" id="news">
-    <h2 class="my-5">
+    <h2 class="">
         Новости
     </h2>
     @foreach($blogs as $key => $blog)
