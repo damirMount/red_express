@@ -38,5 +38,38 @@
 
 
 
+<script>
+    $(document).on('click', '#Search', function (e) {
+        let invoice = $('#invoice').val();
+        $('#empty-cargo').text('');
+        $.ajax({
+            url: '{{ route('get.invoice') }}',
+            method: 'get',
+            data: {
+                'invoice': invoice,
+            },
+            success: function (data) {
+                    console.log(data);
+                if (data.number_id) {
+                    $('#cargo').text(data.number_id)
+                    $('#status').text(data.status)
+                    $('#country').text(data.country)
+                    $('#time').text(data.time)
 
+                    $('#invoice').val('');
+                    $('#modalSearch').modal('toggle');
+                    $('#modalResult').modal('show');
+                }
+                else {
+                    $('#empty-cargo').text(data.status);
+                    $('#empty-cargo').removeClass('d-none');
+                }
+                // console.log(data.country)
+            },
+            // error: function (error) {
+            //     console.log(error);
+            // }
+        })
+    })
+</script>
 <!-- Including in app.blade.php -->
