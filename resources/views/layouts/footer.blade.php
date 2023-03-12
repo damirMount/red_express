@@ -25,12 +25,12 @@
                             </span>
                         </li>
                         <li>
-                            <span class="text">
+                            <span class="text" style="-webkit-text-fill-color: white;">
                                 0221 22 20 00
                             </span>
                         </li>
                         <li>
-                            <span class="text">
+                            <span class="text" style="-webkit-text-fill-color: white;">
                                 0558 55 98 38
                             </span>
                         </li>
@@ -47,7 +47,7 @@
                             </span>
                         </li>
                         <li>
-                            <span class="text">
+                            <span class="text text-white" style="-webkit-text-fill-color: white;">
                                 0504222000
                             </span>
                         </li>
@@ -95,12 +95,13 @@
 
         var myMap = new ymaps.Map('map-footer', {
             center: [42.875969, 74.603701],
-            zoom: 12
+            zoom: 12,
+            controls: []
         }, {
             searchControlProvider: 'yandex#search'
         })
         myMap.behaviors.disable('scrollZoom');
-
+        myMap.behaviors.disable('drag');
         let objects = [
             [42.857923, 74.627246],
             [42.903778, 74.611867],

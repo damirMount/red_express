@@ -51,9 +51,6 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'image' => 'required|dimensions:width=350,height=290',
-        ]);
         $blog = Blog::create($request->except('image'));
         $blog->banner = ImageUploader::upload($request->file('image'), 'blogs', 'blog');
         $blog->save();
@@ -91,9 +88,6 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-        $request->validate([
-            'image' => 'dimensions:width=350,height=290',
-        ]);
         $blog->update($request->all());
         if ($request->file('image')) {
             Storage::delete('public/' . $blog->banner);

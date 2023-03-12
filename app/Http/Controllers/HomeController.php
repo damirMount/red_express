@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Blog;
 use App\Offer;
 use App\Question;
+use App\Service\InvoiceGetter;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

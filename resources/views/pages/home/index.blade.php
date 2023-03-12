@@ -104,7 +104,7 @@
 
             @include('pages.home.news')
 
-               @include('pages.home.questions')
+            @include('pages.home.questions')
         </div>
     </section>
 
@@ -116,25 +116,25 @@
             invoice = @json($invoice);
         @endif
         $(document).ready(function (e) {
+            console.log(invoice.original.view);
             if (invoice != null) {
-                if(invoice.status === 'Груз не найден'){
-                    invoice.number_id = '';
-                    invoice.country = '';
-                    invoice.time = '';
-                }
-                $('#cargo').text(invoice.number_id);
-                $('#status').text(invoice.status);
-                $('#country').text(invoice.country);
-                $('#time').text(invoice.time);
-                $('#modalResult').modal('show');
+                $('.red-modal-results').html(invoice.original.view);
+                $('#modalSearch').modal('show');
+
+                // if(invoice.status === 'Груз не найден'){
+                //     invoice.number_id = '';
+                //     invoice.country = '';
+                //     invoice.time = '';
+                // }
+                // $('#cargo').text(invoice.number_id);
+                // $('#status').text(invoice.status);
+                // $('#country').text(invoice.country);
+                // $('#time').text(invoice.time);
+
             }
 
         })
     </script>
-@endsection
-
-@section('scripts')
-
     <script>
         $(document).on('click', '#get-questions', function (e) {
             let ids = @json($questionIds);
@@ -151,4 +151,5 @@
             })
         })
     </script>
+
 @endsection

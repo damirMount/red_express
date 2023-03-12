@@ -1,65 +1,50 @@
-<div
-    class="modal fade modal-result"
-    id="modalResult"
-    tabindex="2"
-    aria-labelledby="modalResult"
-    aria-hidden="true"
->
-    <div class="modal-dialog modal-sm modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header border-0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class="first-step">
-                <div class="row align-items-center">
-                    <div class="col-6">
-                        <p>
-                            Груз:
-                        </p>
-                    </div>
-                    <div class="col-6">
-                        <p class="search-result" id="cargo">
-                            486060
-                        </p>
-                    </div>
+@if(isset($result['number_id']))
+<p class="head">
+    Результат:
+</p>
 
-                    <div class="col-6">
-                        <p>
-                            Статус:
-                        </p>
-                    </div>
-                    <div class="col-6">
-                        <p class="search-result" id="status">
-                            Ожидается
-                        </p>
-                    </div>
+<div class="d-flex result justify-content-between">
+    <div class="result-name">Груз:</div>
+    <div class="result-text" id="invoice">{{ $result['number_id'] }}</div>
+</div>
+<div class="d-flex result justify-content-between">
+    <div class="result-name">Номер рейса:</div>
+    <div class="result-text" id="invoice">{{ $result['flight_numder'] }}</div>
+</div>
+<div class="d-flex result justify-content-between">
+    <div class="result-name">Статус:</div>
+    <div class="result-text status"  id="status">{{ $result['status'] }}</div>
+</div>
+<div class="d-flex result justify-content-between">
+    <div class="result-name">Местонахождение:</div>
+    <div class="result-text" id="country">{{ $result['country'] }}</div>
+</div>
+<div class="d-flex result justify-content-between">
+    <div class="result-name">Место выдачи:</div>
+    <div class="result-text" id="address">{{ $result['adress'] }}</div>
+</div>
 
-                    <div class="col-6">
-                        <p>
-                            Местонахождение:
-                        </p>
-                    </div>
-                    <div class="col-6">
-                        <p class="search-result" id="country">
-                            Казахстан
-                        </p>
-                    </div>
-
-                    <div class="col-6">
-                        <p>
-                            Прибытие через:
-                        </p>
-                    </div>
-                    <div class="col-6">
-                        <p class="search-result" id="time">
-                            2 дня
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
+@if(!empty($result['time']))
+    <div class="d-flex result justify-content-between">
+        <div class="result-name">Прибытие:</div>
+        <div class="result-text" id="time">{{ $result['time'] }}</div>
     </div>
-  </div>
+@endif
+<div class="d-flex result justify-content-between">
+    <div class="result-name">Контакты:</div>
+    <div class="result-phones">
+        <ul class="list-unstyled">
+            @foreach($result['phones'] as $phone)
+                <li>
+                    <a href="tel: {{ $phone }}">{{ $phone }}</a>
+                </li>
+            @endforeach
+        </ul>
+    </div>
+</div>
 
+@else
+    <h2 class="red-modal-title" style="color: 	#ff9966">
+        Груз не найден!
+    </h2>
+@endif

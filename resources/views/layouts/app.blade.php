@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Red Express</title>
+        <meta name="description" content="Транспортная компания Кыргызстан-Казахстан-Россия">
+        <title>Red express cargo</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
             @yield('content')
 
             @include('components.popups.track_cargo.search_cargo')
-            @include('components.popups.track_cargo.result')
+{{--            @include('components.popups.track_cargo.result')--}}
         </div>
 
         @include('layouts.footer')
@@ -39,13 +39,30 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         @yield('scripts')
+{{--        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>--}}
 
         <script>
-            $('modalResult').on('shown.bs.modal', function() {
-                $('modalSearch').hide();
+            $('#modalSearch').on('hidden.bs.modal', function () {
+                $('.red-modal-results').empty();
+            })
+
+            $(document).on('click', '#Search', function (e) {
+                let invoice = $('#invoice').val();
+                $('#empty-cargo').text('');
+                $.ajax({
+                    url: '{{ route('get.invoice') }}',
+                    method: 'get',
+                    data: {
+                        'invoice': invoice,
+                    },
+                    success: function (data) {
+                        $('.red-modal-results').html(data.view);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                })
             })
         </script>
-
-
     </body>
 </html>
