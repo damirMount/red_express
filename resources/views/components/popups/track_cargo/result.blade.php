@@ -26,7 +26,7 @@
 
 @if(!empty($result['time']))
     <div class="d-flex result justify-content-between">
-        <div class="result-name">Прибытие:</div>
+        <div class="result-name">Примерное прибытие:</div>
         <div class="result-text" id="time">{{ $result['time'] }}</div>
     </div>
 @endif

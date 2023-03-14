@@ -45,21 +45,26 @@ class InvoiceGetter
     {
         if (!empty($cargo['time'])){
             $time = Carbon::now()->diffInDays($cargo['time'], false);
+            $cutTime = substr($time, -1);
+            $dayString = '';
+
+            switch ($cutTime) {
+                case $cutTime == 1 :
+                    $dayString = 'день';
+                    break;
+                case $cutTime > 1 && $cutTime < 5:
+                    $dayString = 'дня';
+                    break;
+                case $cutTime >= 5 && $cutTime <= 20:
+                    $dayString = 'дней';
+                    break;
+            }
 
             if ($time > 0){
-            $cargo['time'] = 'Через ' . $time . ' дня';
-        }
-        else{
-                if (abs($time) == 1) {
-                    $cargo['time'] = abs($time) . ' день назад';
-                }
-                elseif (abs($time) >= 2 && abs($time) <= 4) {
-                    $cargo['time'] = abs($time) . ' дня назад';
-
-                }
-                else{
-                    $cargo['time'] = abs($time) . ' дней назад';
-                }
+                $cargo['time'] = 'Через ' . $time . ' ' . $dayString;
+            }
+            else{
+                $cargo['time'] = abs($time) . ' ' . $dayString .' назад';
             }
         }
 
