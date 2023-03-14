@@ -47,7 +47,7 @@ class InvoiceGetter
             $time = Carbon::now()->diffInDays($cargo['time'], false);
 
             if ($time > 0){
-            $cargo['time'] = $time . ' дня';
+            $cargo['time'] = 'Через ' . $time . ' дня';
         }
         else{
                 if (abs($time) == 1) {

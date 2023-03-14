@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Транспортная компания Кыргызстан-Казахстан-Россия">
-        <title>Red express cargo</title>
-
+        <meta name="description" content="Экспресс грузоперевозки из Бишкека в Москву, Казань, Самару, Уфу, Екатеринбург и Челябинск. От 40 руб / кг в РФ.">
+        <title>КАРГО БИШКЕК ➡️ МОСКВА, РОССИЯ | Red Express Cargo</title>
+        <link rel="shortcut icon" type="image/jpg" href="/img/home/logo.png"/>
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="preconnect" href="https://fonts.googleapis.com">

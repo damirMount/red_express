@@ -84,8 +84,9 @@
                 <div class="col-sm-7 col-12 d-flex align-items-center">
                     <div class="red-express__look-cargo">
                         <h1>
-                            RED Express - Перевозка сборных грузов
+                            Экспресс карго из Бишкека в Москву
                         </h1>
+                        <p>Рэд Экспресс Карго - новый стандарт грузоперевозок</p>
                         @include('components.buttons.btn_search',
                             ['text'=>'Отследить мой груз', 'class'=>'search-cargo'])
                     </div>

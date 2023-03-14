@@ -22,7 +22,7 @@
                        Номер накладной
                      </p>
                      <div class="red-modal-form d-flex justify-content-between">
-                       <input type="text" class="search-input" id="invoice">
+                       <input type="text" class="search-input" id="invoice" value="92.230311151750">
                        <button class="search-btn btn" id="Search">
                          Найти
                        </button>
